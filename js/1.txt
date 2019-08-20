@@ -1,0 +1,280 @@
+[row]
+<div class="container-arrow container-arrow-top">
+<div class="chevron"></div> 
+<div class="chevron"></div> 
+<div class="chevron"></div> 
+</div>
+<h3 style="text-align: center; margin: 40px 0 40px 0;">УСЛУГИ БЮРО ПЕРЕВОДОВ MOSCOW TIME</h3>
+[span3]
+<div class="service-box services-home rotate"><figure class="icon"><i class="icon-file-text"></i></figure>
+<div class="service-box_body">
+<h2 class="title"><a title="" href="/uslugi/notarialnyy-perevod-dokumentov" target="_self">Перевод документов с заверением</a></h2>
+<div class="clear"></div>
+<div class="service-box_txt">Перевод документов с нотариальным заверением или заверением печатью компании...</div>
+</div>
+</div>
+[sm_hr]
+<div class="service-box services-home rotate"><figure class="icon"><i class="icon-certificate"></i></figure>
+<div class="service-box_body">
+<h2 class="title"><a title="" href="/uslugi/legalizaciya-dokumentov/" target="_self">Консульская легализация</a></h2>
+<div class="clear"></div>
+<div class="service-box_txt">Консульская легализация документов для предоставления за рубежом...</div>
+</div>
+</div>
+<!-- /Service Box -->
+[/span3]
+[span3]
+[vr]
+<div class="service-box services-home rotate"><figure class="icon"><i class="icon-pen2"></i></figure>
+<div class="service-box_body">
+<h2 class="title"><a title="" href="/uslugi/pismeniy-perevod/" target="">Письменный перевод текста</a></h2>
+<div class="clear"></div>
+<div class="service-box_txt">Бюро переводов Moscow Time - письменный перевод с/на 112 языков, 39 тематик ...</div>
+</div>
+</div>
+[/vr]
+[sm_hr]
+[vr]
+<div class="service-box services-home rotate" style="margin-top: -3px;"><figure class="icon"><i class="icon-time"></i></figure>
+<div class="service-box_body">
+<h2 class="title"><a title="" href="/uslugi/documents-delivery/" target="_self">Доставка документов</a></h2>
+<div class="clear"></div>
+<div class="service-box_txt">Доставка документов как по Москве, так и в любую страну мира по выгодным тарифам...</div>
+</div>
+</div>
+<!-- /Service Box -->
+[/vr]
+[/span3]
+[span3]
+[vr]
+<div class="service-box services-home rotate"><figure class="icon"><i class="icon-comments"></i></figure>
+<div class="service-box_body">
+<h2 class="title"><a title="" href="/uslugi/ustniy-perevod/" target="_self">Устный перевод</a></h2>
+<div class="clear"></div>
+<div class="service-box_txt">Услуги устного последовательного и синхронного перевода...</div>
+</div>
+</div>
+[/vr]
+[sm_hr]
+[vr]
+<div class="service-box services-home rotate"><figure class="icon"><i class="icon-laptop"></i></figure>
+<div class="service-box_body">
+<h2 class="title"><a title="" href="/uslugi/localization/perevod-i-localizaciya-saitov" target="_self">Перевод сайтов</a></h2>
+<div class="clear"></div>
+<div class="service-box_txt">Перевод и локализация сайтов, раскрутка сайтов в иностранных поисковых системах...</div>
+</div>
+</div>
+[/vr]
+[/span3]
+[span3]
+[vr]
+<div class="service-box services-home rotate"><figure class="icon"><i class="icon-font"></i></figure>
+<div class="service-box_body">
+<h2 class="title"><a title="" href="/uslugi/apostile/" target="_self">Апостиль документов</a></h2>
+<div class="clear"></div>
+<div class="service-box_txt">Апостиль на документы, подлежащие предоставлению за рубежом на территории стран Гаагской конвенции...</div>
+</div>
+</div>
+[/vr]
+[sm_hr]
+[vr]
+<div class="service-box services-home rotate"><figure class="icon"><i class="icon-graduation-cap"></i></figure>
+<div class="service-box_body">
+<h2 class="title"><a title="" href="/education/coursesru/" target="_self">Курсы</a></h2>
+<div class="clear"></div>
+<div class="service-box_txt">Курсы нотариального перевода и международной легализации документов с трудоустройством...</div>
+</div>
+</div>
+[/vr]
+[/span3]
+[/row]
+[cherry_parallax image="b.jpg" speed="normal" invert="false" custom_class="parallax-img display-none"]
+<div class="overlay-discount"></div>
+<div class="overlay-discount"></div>
+<div class="overlay-discount"></div>
+<div class="white-inner" style="position: relative; width: 100%; z-index: 100; text-align: center; margin-bottom: 10px; color: white;">
+<div class="online-page-header" style="margin-top: 15px;">ONLINE 24/7</div>
+<div class="online-page-subheader">КАЛЬКУЛЯТОР ПИСЬМЕННОГО ПЕРЕВОДА И ЗАКАЗА ONLINE</div>
+<div class="steps-wrap page-id-3288">
+<div class="step-item span4 first-step">
+<div class="step-title">1</div>
+<div class="step-desc">ЗАГРУЗИТЕ ФАЙЛ ИЛИ ВВЕДИТЕ ТЕКСТ</div>
+</div>
+<div class="step-item span4 second-step">
+<div class="step-title">2</div>
+<div class="step-desc">ВЫБЕРИТЕ СРОК И СТОИМОСТЬ</div>
+</div>
+<div class="step-item span4">
+<div class="step-item ">
+<div class="step-title">3</div>
+<div class="step-desc">ПОЛУЧИТЕ ГОТОВЫЙ ПЕРЕВОД В СРОК</div>
+</div>
+</div>
+</div>
+[online_form]
+[/cherry_parallax]
+<div class="section-new-advantages">
+<div class="overlay-discount">
+<div class="new-advantages new-advantages-bg">
+<div class="new-advantages__content">
+<a id="moscow-time" name="moscow-time"></a>
+<h3 class="new-advantages__title">наши преимущества</h3>
+<div class="new-advantages__block">
+<div class="new-advantages__item">
+<div class="item__img"><a href="/apostille-online"><img src="/wp-content/themes/theme53444/images/icons/advantages-icon1.png" alt="Icon" /></a></div>
+<div class="item__title"><a href="/apostille-online">Удобно
+заказывать</a></div>
+<div class="item__text">Основное направление деятельности бюро переводов Moscow Time, Москва – предоставление высококачественных</div>
+</div>
+<div class="new-advantages__item">
+<div class="item__img"><img src="/wp-content/themes/theme53444/images/icons/advantages-icon2.png" alt="Icon" /></div>
+<div class="item__title">Персональный
+менеджер</div>
+<div class="item__text">Основное направление деятельности бюро переводов Moscow Time, Москва – предоставление высококачественных</div>
+</div>
+<div class="new-advantages__item">
+<div class="item__img"><img src="/wp-content/themes/theme53444/images/icons/advantages-icon3.png" alt="Icon" /></div>
+<div class="item__title">Гарантия
+качества</div>
+<div class="item__text">Основное направление деятельности бюро переводов Moscow Time, Москва – предоставление высококачественных</div>
+</div>
+<div class="new-advantages__item">
+<div class="item__img"><img src="/wp-content/themes/theme53444/images/icons/advantages-icon4.png" alt="Icon" /></div>
+<div class="item__title">Юридические
+гарантии</div>
+<div class="item__text">Основное направление деятельности бюро переводов Moscow Time, Москва – предоставление высококачественных</div>
+</div>
+<div class="new-advantages__item">
+<div class="item__img"><a href="payform"><img src="/wp-content/themes/theme53444/images/icons/advantages-icon5.png" alt="Icon" /></a></div>
+<div class="item__title"><a href="payform">Оплатить
+просто</a></div>
+<div class="item__text">Основное направление деятельности бюро переводов Moscow Time, Москва – предоставление высококачественных</div>
+</div>
+</div>
+<div class="new-advantages__title">Бюро переводов Moscow Time Москва</div>
+<div class="new-advantages__description">
+<div class="new-advantages__text">Основное направление деятельности бюро переводов Moscow Time, Москва – предоставление высококачественных переводческих услуг в Москве для корпоративных и частных клиентов. Moscow Time - это профессиональные переводчики, многие из которых являются тематическими специалистами в своей области, опытные редакторы и корректоры, специалисты в области нотариата и консульской легализации, специалисты-носители языка, менеджеры по работе с клиентами и внештатными переводчиками, а также высококомпетентные программисты, копирайтеры и нацеленный на превосходный результат руководящий состав переводческой компании. Компания предоставляет услуги письменного и устного перевода, услуги по переводу и локализации сайтов и программных продуктов, переводу личных и корпоративных документов с нотариальным заверением, а также услуги легализации и апостилирования документов. Любую услугу в компании возможно заказать и получить онлайн или в офисе.</div>
+<div class="new-advantages__text">Основной акцент бюро переводов Moscow Time делает на качество предоставляемых услуг, именно качество является нашей визитной карточкой. Переводческая компания Moscow Time использует классическую систему отслеживания качества перевода, то есть само выполнение перевода подразумевает под собой трехступенчатый процесс. Качество перевода зависит как от профессионализма переводчика, так и редактора, в задачи которого входит единство стилистики и точность применения терминологии. В компетенцию корректора-носителя языка входит вычитка, контроль качества грамматики и орфографии.</div>
+<div class="new-advantages__text">Одним из наиболее важных аспектов, играющих роль в обеспечении успешного выполнения Вашего перевода, является правильный выбор переводческой компании. Тысячи наших клиентов по достоинству оценили качество нашей работы, уровень профессиональной этики и индивидуальный подход к каждому клиенту. У нас работают лучшие специалисты в области перевода, применяя современные методы контроля качества и удовлетворяя таким образом Ваши пожелания в области переводческих услуг.</div>
+<div class="new-advantages__text">Стоит также отметить, что наше переводческое бюро предоставляет возможность размещения заказа и оплаты онлайн за услуги письменного перевода, услуги устного перевода, услуги перевода документов с нотариальным заверением, перевода документов с заверением печатью компании с доставкой на дом или в офис по всему миру круглосуточно и без выходных. Переводческая компания Moscow Time оказывает полный спектр лингвистических услуг для бизнеса. Если Вы в поиске надежного агентства переводов в Москве, предоставляющего любой вид услуг в области лингвистического сопровождения бизнеса - агентство переводов Moscow Time к Вашим услугам! Предоставляемые нами услуги в области перевода соответствуют самым жестким требованиям качества. Переводческое агентство Moscow Time - компания в Москве, обеспечивающая быстроту выполнения Вашего заказа на высококачественном уровне и по доступным ценам.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-arrow">
+<div class="chevron"></div> 
+<div class="chevron"></div> 
+<div class="chevron"></div> 
+</div>
+</div>
+<div class="section-new-city">
+<div class="overlay-discount overlay-discount-city">
+<div class="new-city">
+<div class="new-city__content"><a class="new-city__btn" href="https://msc24.trueholding.ru/costs/" target="_self">Цены <img src="/wp-content/themes/theme53444/images/icons/new-arrow.png" alt="Icon" /></a>
+<div class="new-city__block">
+<ul>
+ 	<li>Азербайджанский</li>
+ 	<li>Албанский</li>
+ 	<li>Английский</li>
+ 	<li>Арабский</li>
+ 	<li>Армянский</li>
+ 	<li>Белорусский</li>
+ 	<li>Бенгальский</li>
+ 	<li>Бирманский</li>
+ 	<li>Болгарский</li>
+ 	<li>Боснийский</li>
+ 	<li>Венгерский</li>
+ 	<li>Вьетнамский</li>
+ 	<li>Греческий</li>
+ 	<li>Грузинский</li>
+ 	<li>Дари</li>
+</ul>
+<ul>
+ 	<li>Датский</li>
+ 	<li>Древнегреческий</li>
+ 	<li>Иврит</li>
+ 	<li>Индонезийский</li>
+ 	<li>Ирландский</li>
+ 	<li>Исландский</li>
+ 	<li>Испанский</li>
+ 	<li>Итальянский</li>
+ 	<li>Казахский</li>
+ 	<li>Каталонский</li>
+ 	<li>Киргизский</li>
+ 	<li>Китайский</li>
+ 	<li>Корейский</li>
+ 	<li>Кхмерский</li>
+ 	<li>Лаосский</li>
+</ul>
+<ul>
+ 	<li>Латынь</li>
+ 	<li>Латышский</li>
+ 	<li>Литовский</li>
+ 	<li>Македонский</li>
+ 	<li>Малайский</li>
+ 	<li>Маратхи</li>
+ 	<li>Молдавский</li>
+ 	<li>Монгольский</li>
+ 	<li>Немецкий</li>
+ 	<li>Непальский</li>
+ 	<li>Нидерландский</li>
+ 	<li>Норвежский</li>
+ 	<li>Польский</li>
+ 	<li>Португальский</li>
+ 	<li>Пушту</li>
+</ul>
+<ul>
+ 	<li>Румынский</li>
+ 	<li>Сербский</li>
+ 	<li>Словацкий</li>
+ 	<li>Словенский</li>
+ 	<li>Тагальский</li>
+ 	<li>Таджикский</li>
+ 	<li>Тайский</li>
+ 	<li>Тамильский</li>
+ 	<li>Татарский</li>
+ 	<li>Телугу</li>
+ 	<li>Турецкий</li>
+ 	<li>Туркменский</li>
+ 	<li>Узбекский</li>
+ 	<li>Украинский</li>
+ 	<li>Урду</li>
+</ul>
+<ul>
+ 	<li>Фарси</li>
+ 	<li>Финский</li>
+ 	<li>Фламандский</li>
+ 	<li>Французский</li>
+ 	<li>Хинди</li>
+ 	<li>Хорватский</li>
+ 	<li>Черногорский</li>
+ 	<li>Чешский</li>
+ 	<li>Шведский</li>
+ 	<li>Эстонский</li>
+ 	<li>Японский</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+[spacer]
+[row]
+[span12]
+<h3 style="text-align: center; margin: 40px 0 40px 0;"><a href="/otzyvy/">ОТЗЫВЫ И РЕКОМЕНДАЦИИ КЛИЕНТОВ</a></h3>
+<div class="logo-slider-wrapper">[logoshowcase cat_id="40" infinite="false" dots="false" arrows="true" slides_column="6" slides_scroll="1" autoplay="false" autoplay_interval="400" speed="500" loop="true" center_mode="false" show_title="false" image_size="original"]</div>
+[/span12]
+[/row]
+[spacer]
+<div class="section-new-pay">
+<div class="overlay-discount overlay-discount-pay">
+<div class="new-pay">
+<h3 class="new-pay__title">Способы оплаты онлайн</h3>
+<div class="new-pay__img"><img src="/wp-content/themes/theme53444/images/icons/new-pay.png" alt="Icon" /></div>
+<div class="new-pay__subtitle">После заказа перевода и получения подтверждения от нас, перейдите на страницу оплата по кнопке «Оплатить» в шапке сайта. Далее следуйте инструкции на странице оплаты и не забудьте в поле «Назначение перевода» указать ваш номер телефона и e-mail.</div>
+<a class="new-pay__btn" href="#">ОПЛАТИТЬ</a>
+
+</div>
+</div>
+</div>
+</div>

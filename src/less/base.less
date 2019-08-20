@@ -1,0 +1,634 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+@font-face{font-family:"Roboto-bold";
+  src: url(/fonts/Roboto-bold/Roboto-bold.woff2) format('woff'),
+  url(/fonts/Roboto-bold/Roboto-bold.eot),
+  url(/fonts/Roboto-bold/Roboto-bold.otf),
+  url(/fonts/Roboto-bold/Roboto-bold.svg),
+  url(/fonts/Roboto-bold/Roboto-bold.ttf);
+}
+
+@font-face{font-family:"Roboto-regular";
+  src: url(/fonts/Roboto-regular/Roboto-regular.woff2) format('woff'),
+  url(/fonts/Roboto-regular/Roboto-regular.eot),
+  url(/fonts/Roboto-regular/Roboto-regular.otf),
+  url(/fonts/Roboto-regular/Roboto-regular.svg),
+  url(/fonts/Roboto-regular/Roboto-regular.ttf);
+}
+
+@font-face{font-family:"Roboto-light";
+  src: url(/fonts/Roboto-light/Roboto-light.woff2) format('woff'),
+  url(/fonts/Roboto-light/Roboto-light.eot),
+  url(/fonts/Roboto-light/Roboto-light.otf),
+  url(/fonts/Roboto-light/Roboto-light.svg),
+  url(/fonts/Roboto-light/Roboto-light.ttf);
+}
+
+@font-face{font-family:"Circe-bold";
+  src: url(/fonts/Circe-bold/Circe-bold.woff2) format('woff'),
+  url(/fonts/Circe-bold/Circe-bold.eot),
+  url(/fonts/Circe-bold/Circe-bold.otf),
+  url(/fonts/Circe-bold/Circe-bold.svg),
+  url(/fonts/Circe-bold/Circe-bold.ttf);
+}
+
+@font-face{font-family:"Roboto-LightItalic";
+  src: url(/fonts/Roboto-LightItalic/Roboto-LightItalic.woff2) format('woff'),
+  url(/fonts/Roboto-LightItalic/Roboto-LightItalic.eot),
+  url(/fonts/Roboto-LightItalic/Roboto-LightItalic.otf),
+  url(/fonts/Roboto-LightItalic/Roboto-LightItalic.svg),
+  url(/fonts/Roboto-LightItalic/Roboto-LightItalic.ttf);
+}
+
+header{
+  max-width: 2560px;
+  margin: 0 auto;
+  .headerTop{
+    background: #e9f2fa;
+    padding: 14px 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    .headerTop__content{
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .headerTop__search{
+      width: 608px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .headerTop__list{
+      font-size: 18px;
+      color: #131a22;
+      font-family:"Roboto-bold";
+      img{
+        vertical-align: middle;
+      }
+    }
+    .headerTop__input{
+      position: relative;
+      input{
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(191, 203, 214);
+        background-color: #d3dce4;
+        width: 472px;
+        height: 40px;
+        outline: none;
+        border-radius: 20px;
+        box-sizing: border-box;
+        padding: 0px 45px 0px 15px;
+        font-size: 14px;
+        color: #131a22;
+      }
+      img{
+        position: absolute;
+        right: 15px;
+        top: 10px;
+      }
+    }
+  }
+}
+
+header{
+  .headerLink{
+    .headerLink__content{
+      max-width: 1200px;
+      margin: 0 auto;
+      ul{
+        display: flex;
+        justify-content: space-between;
+        li{
+        text-align: center;
+        list-style-type: none;
+          a{
+            width: 300px;
+            height: 45px;
+            display: block;
+            text-transform: uppercase;
+            font-family:"Roboto-regular";
+            font-size: 14px;
+            text-decoration: none;
+            line-height: 45px;
+            color: #131a22;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            &:hover{
+              background: #bda658;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.onlineCasino{
+  max-width: 2560px;
+  margin: 0 auto;
+  .onlineCasino__content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+.onlineCasino__main{
+  height: 477px;
+  background-image: url(/img/maks/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  .main__title{
+    font-family:"Circe-bold";
+    font-size: 42px;
+    color: #bda658;
+    padding: 60px 0px 20px 0px;
+  }
+  .main__text{
+    font-family:"Roboto-light";
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.8;
+  }
+  .main__block{
+    display: flex;
+    align-items: center;
+    background: #e1e1e1;
+    border-radius: 7px;
+    overflow: hidden;
+    height: 140px;
+    width: 830px;
+    margin-top: 40px;
+  }
+  .main__img{
+    height: 140px;
+    width: 140px;
+    img{
+    }
+  }
+  .main__content{
+    position: relative;
+  }
+  .main__info{
+    font-family:"Roboto-LightItalic";
+    font-size: 14px;
+    color: #131a22;
+    line-height: 1.6;
+    padding: 0px 40px;
+  }
+  .main__first{
+    position: absolute;
+    top: -17px;
+    left: 20px;
+  }
+  .main__second{
+    position: absolute;
+    right: 30px;
+    bottom: -5px;
+  }
+}
+
+.onlineCasino{
+  .onlineCasino__play{
+    padding-top: 45px;
+    .play__item{
+      width: 100%;
+      background: #fff8df;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 7px;
+      overflow: hidden;
+      height: 227px;
+      margin-bottom: 25px;
+    }
+    .play__img{
+      position: relative;
+    }
+    .play__btn{
+      position: absolute;
+      bottom: 15px;
+      display: flex;
+      width: 190px;
+      justify-content: space-between;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      a{
+        border-radius: 6px;
+        background: #04a100;
+        width: 90px;
+        height: 34px;
+        display: inline-block;
+        line-height: 34px;
+        text-align: center;
+        font-family:"Roboto-regular";
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+    .play__btn--preview{
+      position: static;
+      display: block;
+      width: 100px;
+      margin: 0px;
+    }
+    .play__more{
+      background: #a99348!important;
+    }
+    .play__more--preview{
+      background: #a99348!important;
+      margin-top: 6px;
+    }
+    .play__content{
+      width: 100%;
+    }
+    .play__title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 15px 8px 25px;
+      background: #dddddd;
+    }
+    .play__text{
+      font-size: 18px;
+      color: #131a22;
+      font-family:"Roboto-bold";
+    }
+    .play__star{
+      position: relative;
+      span{
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 9px;
+        color: #fff;
+        font-size: 16px;
+        font-family:"Roboto-bold";
+      }
+    }
+  }
+}
+
+
+.onlineCasino{
+  .onlineCasino__play{
+    .play__block{
+      display: flex;
+      justify-content: space-between;
+      .block__item{
+        padding: 0px 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      .block__item--birder{
+        border-left: 1px solid #ebe5ce;
+        border-right: 1px solid #ebe5ce;
+      }
+      .block__title{
+        font-family:"Roboto-bold";
+        font-size: 18px;
+        color: #131a22;
+      }
+      .block__number{
+        font-family:"Roboto-bold";
+        font-size: 20px;
+        color: #04a100;
+        padding-bottom: 8px;
+      }
+      .block__subtitle{
+        font-family:"Roboto-bold";
+        font-size: 14px;
+        color: #131a22;
+        padding-bottom: 10px;
+      }
+      .block__list{
+        padding-left: 15px;
+        li{
+          font-family:"Roboto-light";
+          font-size: 14px;
+          color: #131a22;
+        }
+      }
+      .block__icon{
+        padding-top: 10px;
+        img{
+          margin-right: 10px;
+        }
+      }
+      .block__games{
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+        .games__item{
+          position: relative;
+        }
+        .games__overlay{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: #fff8df;
+          opacity: 0.7;
+          display: none;
+        }
+      }
+      .block__site{
+        color: #a99348;
+        font-size: 14px;
+        font-family:"Roboto-regular";
+        text-decoration: none;
+        padding-top: 20px;
+        display: block;
+      }
+    }
+  }
+}
+
+.onlineCasino{
+  .onlineCasino__play{
+    padding-bottom: 60px;
+    .play__preview{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f1f1f1;
+      border-radius: 7px;
+      overflow: hidden;
+      padding-right: 20px;
+      box-sizing: border-box;
+      margin-bottom: 25px;
+      .preview__number{
+        font-size: 14px;
+        color: #131a22;
+        font-family:"Roboto-light";
+        padding: 15px;
+        border-left: 1px solid #ebe5ce;
+        min-height: 66px;
+        box-sizing: border-box;
+        padding-top: 25px;
+      }
+      .preview__price{
+        font-size: 14px;
+        color: #04a100;
+        font-family:"Roboto-bold";
+        padding: 16px;
+        border-left: 1px solid #ebe5ce;
+        border-right: 1px solid #ebe5ce;
+        max-width: 92px;
+        text-align: center;
+      }
+      .preview__site{
+        color: #a99348;
+        font-size: 14px;
+        font-family:"Roboto-regular";
+        text-decoration: none;
+        display: block;
+      }
+      .preview__block{
+        border-left: 1px solid #ebe5ce;
+        border-right: 1px solid #ebe5ce;
+        padding-left: 16px;
+        padding-right: 16px;
+        .block__subtitle{
+          font-family: "Roboto-bold";
+          font-size: 14px;
+          color: #131a22;
+          padding-bottom: 10px;
+        }
+        .block__games{
+          display: flex;
+          justify-content: space-between;
+          width: 170px;
+          align-items: center;
+          .games__item{
+            position: relative;
+          }
+          .games__overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #f1f1f1;
+            opacity: 0.7;
+            display: none;
+          }
+          .games__img{
+            height: 26px;
+            width: 26px;
+          }
+        }
+      }
+      .preview__curl{
+        border-radius: 50%;
+        background: #000;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        span{
+          color: #fff;
+          line-height: 24px;
+          text-align: center;
+          display: block;
+          font-family:"Roboto-bold";
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.onlineCasino{
+  max-width: 1200px;
+  margin: 0 auto;
+  .activeText{
+    display: none;
+  }
+  .onlineCasino__title{
+    font-family:"Circe-bold";
+    color: #00478a;
+    font-size: 32px;
+    padding-bottom: 35px;
+  }
+  .onlineCasino__text{
+    font-family:"Roboto-regular";
+    color: #000;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .onlineCasino__info{
+    padding: 35px 0px;
+    .info__title{
+      border-radius: 4px;
+      background: #f8e8b0;
+      width: 100%;
+      cursor: pointer;
+    }
+    .info__subtitle{
+      padding: 14px 0px 14px 30px;
+      font-family:"Roboto-bold";
+      color: #000;
+      font-size: 14px;
+    }
+    .info__content{
+      padding: 0 10px;
+    }
+    .info__description{
+      border-left: 1px solid #dedede;
+      border-right: 1px solid #dedede;
+      background: #f3f3f3;
+      padding-bottom: 5px;
+    }
+    .info__text{
+      padding: 20px;
+      font-family:"Roboto-light";
+      font-size: 14px;
+      color: #222;
+      line-height: 1.7;
+      max-width: 1100px;
+      padding-bottom: 15px;
+    }
+  }
+  .onlineCasino__best{
+    display: flex;
+    justify-content: space-between;
+    background: #f3f3f3;
+    box-sizing: border-box;
+    padding: 35px 30px;
+    height: 128px;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    .best__title{
+      height: 128px;
+      border-right: 1px solid #e0e0e0;
+      width: 165px;
+    }
+    .best__text{
+      font-family:"Circe-bold";
+      font-size: 26px;
+      color: #bda658;
+      position: relative;
+      top: 25px;
+      max-width: 90px;
+    }
+    .best__icon{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .best__item{
+      width: 150px;
+    }
+  }
+}
+
+.onlineCasino{
+  .onlineCasino__youtube{ 
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 75px;
+    .youtube__video{
+      width: 600px;
+      height: 357px;
+    }
+    .youtube__info{
+      width: 490px;
+    }
+    .youtube__item{
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .youtube__img{
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+    .youtube__text{
+      font-family:"Roboto-regular";
+      font-size: 14px;
+      color: #000;
+      line-height: 1.7;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1240px) {
+  .onlineCasino .onlineCasino__play{padding-bottom: 20px;}
+  .onlineCasino .onlineCasino__play .play__item{display: block;height: auto; width: 300px;margin: 0 auto;margin-bottom: 20px;}
+  .onlineCasino .onlineCasino__play .play__block{display: block;}
+  .onlineCasino .onlineCasino__play .play__img img{width: 100%; height: auto;}
+  .onlineCasino .onlineCasino__play .play__block .block__games {width: 265px;}
+  .onlineCasino .onlineCasino__play .play__block .block__icon img {margin-bottom: 5px;}
+  .onlineCasino .onlineCasino__play .play__block .block__item--birder{border: none;}
+  .onlineCasino .onlineCasino__play .play__preview{display: block; width: 300px; margin: 0 auto; padding: 10px 0px; text-align: center;margin-bottom: 20px; }
+  .onlineCasino .onlineCasino__play .play__btn--preview{margin: 0 auto; padding: 10px 0px;}
+  .onlineCasino .onlineCasino__play .play__preview .preview__price{margin: 0 auto; border: none;}
+  .onlineCasino .onlineCasino__play .play__preview .preview__number{padding: 10px; min-height: 0; border: none;}
+  .onlineCasino .onlineCasino__play .play__preview .preview__price{padding: 10px;}
+  .onlineCasino .onlineCasino__play .play__preview .preview__site{margin-bottom: 10px;}
+  .onlineCasino .onlineCasino__play .play__preview .preview__block .block__games{width: 100%;margin-bottom: 10px;}
+  .onlineCasino .onlineCasino__play .play__preview .preview__curl{ margin: 0 auto; }
+}
+
+@media screen and (max-width: 1200px) {
+  header .headerLink .headerLink__content ul li a{width: 200px;}
+  .onlineCasino__main .main__title{padding: 30px 0px 20px 0px;}
+  .onlineCasino .onlineCasino__best{display: block;height: auto;padding: 20px 20px 5px 20px;width: 300px;margin: 20px auto; text-align: center;}
+  .onlineCasino .onlineCasino__best .best__icon{display: block;}
+  .onlineCasino .onlineCasino__best .best__title{border: none;height: auto;width: 100%;}
+  .onlineCasino .onlineCasino__best .best__text{max-width: 100%;position: static;padding-bottom: 20px;}
+  .onlineCasino .onlineCasino__best .best__item{margin-bottom: 15px;width: 100%;}
+  .onlineCasino .onlineCasino__youtube{display: block; padding-bottom: 30px;}
+  .onlineCasino .onlineCasino__youtube .youtube__video{margin: 0 auto; margin-bottom: 20px;}
+  .onlineCasino .onlineCasino__youtube .youtube__info{margin: 0 auto;}
+}
+
+
+@media screen and (max-width: 992px) {
+  header .headerTop .headerTop__input input{width: 430px;}
+  header .headerTop .headerTop__search{width: 550px;}
+  header .headerLink .headerLink__content ul li a{ width: 150px;}
+  .onlineCasino__main .main__title{padding: 20px 0px 20px 0px; font-size: 32px;}
+  .onlineCasino__main .main__block{width: 100%;}
+}
+
+
+@media screen and (max-width: 768px) {
+  header .headerTop .headerTop__content{display: block;}
+  header .headerTop .headerTop__search{width: 100%; display: block;}
+  header .headerTop .headerTop__input input{ width: 100%; }
+  header .headerTop .headerTop__list{ text-align: center; padding: 15px 0px; }
+  header .headerLink .headerLink__content ul {display: block;}
+  header .headerLink .headerLink__content ul li a{ width: 100%; }
+  .onlineCasino__main{background-image: none; background: #151d25;height: auto; padding-bottom: 20px;}
+  .onlineCasino__main .main__title{padding: 20px 0px 10px 0px;font-size: 22px;}
+  .onlineCasino__main .main__img{ display: none; }
+  .onlineCasino__main .main__info{padding: 15px;}
+  .onlineCasino__main .main__block{height: auto; padding: 2px; width: 100%; box-sizing: border-box;margin-top: 20px;}
+  .onlineCasino__main .main__first{display: none;}
+  .onlineCasino__main .main__second{display: none;}
+  .onlineCasino .onlineCasino__title{font-size: 22px; padding-bottom: 20px;}
+  .onlineCasino .onlineCasino__youtube .youtube__video{width: 100%; height: auto;}
+  .onlineCasino .onlineCasino__youtube .youtube__video img{width: 100%; height: auto;}
+  .onlineCasino .onlineCasino__youtube .youtube__info {width: 100%;}
+}
+
+
+@media screen and (max-width: 360px) {
+  .onlineCasino .onlineCasino__play .play__item{width: 100%;}
+  .onlineCasino .onlineCasino__play .play__preview{width: 100%;}
+  .onlineCasino .onlineCasino__best{width: 100%;}
+}

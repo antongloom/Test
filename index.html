@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Казино</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='src/css/animate.css'>
+    <link rel='stylesheet' href='dist/style.css'>
+    <link rel='stylesheet' href='src/css/owl.carousel.css'>
+    <link rel='stylesheet' href='src/css/owl.theme.default.css'>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+    
+</head>
+<body>
+
+
+<header>
+  <div class="headerTop">
+    <div class="headerTop__content">
+      <div class="headerTop__logo">
+        <img src="img/maks/logo.png" alt="Logo">
+      </div>
+      <div class="headerTop__search">
+        <div class="headerTop__list">Рейтинги <img src="img/maks/list-arrow.png" alt="Img"></div>
+        <div class="headerTop__input">
+          <input type="text">
+          <img src="img/maks/search.png" alt="Img">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="headerLink">
+    <div class="headerLink__content">
+      <ul>
+        <li><a href="#">Обзоры казино</a></li>
+        <li><a href="#">Каталог казино</a></li>
+        <li><a href="#">Обзоры казино</a></li>
+        <li><a href="#">Каталог казино</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div id="onlineCasino">
+   <div class="onlineCasino">
+     <div class="onlineCasino__main">
+       <div class="onlineCasino__content">
+         <div class="main__title">ЧЕСТНЫЙ РЕЙТИНГ ОНЛАЙН-КАЗИНО</div>
+         <div class="main__text">Каждый день на просторах глобальной сети появляются все новые и новые онлайн казино, которые предлагают игрокам свои услуги. Причем их число только растет – в геометрической прогрессии. И это совсем неудивительно, ведь там, где крутятся большие денежные средства, всегда есть конкуренция. Поэтому наверняка у многих из нас возникает вопрос: как найти именно то игорное заведение, которое предлагает самые выгодные и максимально прозрачные условия игры. Чтобы облегчить вам задачу и помочь вам в этом непростом деле, мы составили собственный рейтинг казино онлайн, который опубликован на сайте top-onlinecasinos.net.</div>
+         <div class="main__block">
+           <div class="main__img">
+             <img src="img/maks/man.png" alt="Img">
+           </div>
+           <div class="main__content">
+             <div class="main__info">Выбрать наилучшее азартное заведение, наиболее соответствующие вашим предпочтениям и ожиданиям, теперь просто. В наш список вошли самые честные интернет-площадки для игры на деньги. Поэтому вы можете довериться объективности нашего списка и удача непременно улыбнется вам." Ваш Михаил Богданов, эксперт в области гемблинга.</div>
+             <div class="main__first">
+               <img src="img/maks/first.png" alt="Img">
+             </div>
+             <div class="main__second">
+               <img src="img/maks/second.png" alt="Img">
+             </div>
+           </div>
+         </div>
+        </div>
+     </div>
+     <div class="onlineCasino__play">
+        <div class="onlineCasino__content">
+          <div class="play__item">
+            <div class="play__img">
+              <img src="img/maks/columbus.png" alt="Img">
+              <div class="play__btn">
+                <a href="#">Играть</a>
+                <a class="play__more" href="#">Обзор</a>
+              </div>
+            </div>
+            <div class="play__content">
+              <div class="play__title">
+                <div class="play__text">CASINO COLUMBUS</div>
+                <div class="play__star">
+                  <img src="/img/maks/first-star.png" alt="Icon">
+                  <span>1</span>
+                </div>
+              </div>
+              <div class="play__block">
+                <div class="block__item">
+                  <div class="block__title">Приветственный бонус:</div>
+                  <div class="block__number">100% до 15 000 рублей!</div>
+                  <div class="block__subtitle">А ещё</div>
+                  <ul class="block__list">
+                    <li>CashBack по пятницам</li>
+                    <li>50% на второй и третий депозиты</li>
+                  </ul>
+                  <div class="block__icon">
+                    <img src="img/maks/apple.png" alt="Icon">
+                    <img src="img/maks/android.png" alt="Icon">
+                    <img src="img/maks/microsoft.png" alt="Icon">
+                  </div>
+                </div>
+                <div class="block__item block__item--birder">
+                  <div class="block__subtitle">Игры:</div>
+                  <div class="block__games">
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon1.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon2.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon3.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon4.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon5.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon6.png" alt="Img">
+                    </div>
+                  </div>
+                  <div class="block__subtitle">Платёжные системы:</div>
+                  <div class="block__icon">
+                    <img src="img/maks/pay1.png" alt="Icon">
+                    <img src="img/maks/pay2.png" alt="Icon">
+                    <img src="img/maks/pay3.png" alt="Icon">
+                    <img src="img/maks/pay4.png" alt="Icon">
+                    <img src="img/maks/pay5.png" alt="Icon">
+                    <img src="img/maks/pay6.png" alt="Icon">
+                    <img src="img/maks/pay7.png" alt="Icon">
+                    <img src="img/maks/pay8.png" alt="Icon">
+                    <img src="img/maks/pay9.png" alt="Icon">
+                  </div>
+                </div>
+                <div class="block__item">
+                  <div class="block__subtitle">Общая информация:</div>
+                  <ul class="block__list">
+                    <li>Год открытия - 1996</li>
+                    <li>Лицензия - UK Gambling</li>
+                    <li>Языки: РУС, ENG и +6</li>
+                    <li>Вывод денег: 1-3 дня</li>
+                    <li>Live Chat - Есть</li>
+                  </ul> 
+                  <a href="#" class="block__site">www.columbus.com</a> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="play__item">
+            <div class="play__img">
+              <img src="img/maks/columbus.png" alt="Img">
+              <div class="play__btn">
+                <a href="#">Играть</a>
+                <a class="play__more" href="#">Обзор</a>
+              </div>
+            </div>
+            <div class="play__content">
+              <div class="play__title">
+                <div class="play__text">CASINO COLUMBUS</div>
+                <div class="play__star">
+                  <img src="/img/maks/second-star.png" alt="Icon">
+                  <span>2</span>
+                </div>
+              </div>
+              <div class="play__block">
+                <div class="block__item">
+                  <div class="block__title">Приветственный бонус:</div>
+                  <div class="block__number">100% до 15 000 рублей!</div>
+                  <div class="block__subtitle">А ещё</div>
+                  <ul class="block__list">
+                    <li>CashBack по пятницам</li>
+                    <li>50% на второй и третий депозиты</li>
+                  </ul>
+                  <div class="block__icon">
+                    <img src="img/maks/apple.png" alt="Icon">
+                    <img src="img/maks/android.png" alt="Icon">
+                    <img src="img/maks/microsoft.png" alt="Icon">
+                  </div>
+                </div>
+                <div class="block__item block__item--birder">
+                  <div class="block__subtitle">Игры:</div>
+                  <div class="block__games">
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon1.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon2.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon3.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon4.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon5.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon6.png" alt="Img">
+                    </div>
+                  </div>
+                  <div class="block__subtitle">Платёжные системы:</div>
+                  <div class="block__icon">
+                    <img src="img/maks/pay1.png" alt="Icon">
+                    <img src="img/maks/pay2.png" alt="Icon">
+                    <img src="img/maks/pay3.png" alt="Icon">
+                    <img src="img/maks/pay4.png" alt="Icon">
+                    <img src="img/maks/pay5.png" alt="Icon">
+                    <img src="img/maks/pay6.png" alt="Icon">
+                    <img src="img/maks/pay7.png" alt="Icon">
+                    <img src="img/maks/pay8.png" alt="Icon">
+                    <img src="img/maks/pay9.png" alt="Icon">
+                  </div>
+                </div>
+                <div class="block__item">
+                  <div class="block__subtitle">Общая информация:</div>
+                  <ul class="block__list">
+                    <li>Год открытия - 1996</li>
+                    <li>Лицензия - UK Gambling</li>
+                    <li>Языки: РУС, ENG и +6</li>
+                    <li>Вывод денег: 1-3 дня</li>
+                    <li>Live Chat - Есть</li>
+                  </ul> 
+                  <a href="#" class="block__site">www.columbus.com</a> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="play__item">
+            <div class="play__img">
+              <img src="img/maks/columbus.png" alt="Img">
+              <div class="play__btn">
+                <a href="#">Играть</a>
+                <a class="play__more" href="#">Обзор</a>
+              </div>
+            </div>
+            <div class="play__content">
+              <div class="play__title">
+                <div class="play__text">CASINO COLUMBUS</div>
+                <div class="play__star">
+                  <img src="/img/maks/three-star.png" alt="Icon">
+                  <span>3</span>
+                </div>
+              </div>
+              <div class="play__block">
+                <div class="block__item">
+                  <div class="block__title">Приветственный бонус:</div>
+                  <div class="block__number">100% до 15 000 рублей!</div>
+                  <div class="block__subtitle">А ещё</div>
+                  <ul class="block__list">
+                    <li>CashBack по пятницам</li>
+                    <li>50% на второй и третий депозиты</li>
+                  </ul>
+                  <div class="block__icon">
+                    <img src="img/maks/apple.png" alt="Icon">
+                    <img src="img/maks/android.png" alt="Icon">
+                    <img src="img/maks/microsoft.png" alt="Icon">
+                  </div>
+                </div>
+                <div class="block__item block__item--birder">
+                  <div class="block__subtitle">Игры:</div>
+                  <div class="block__games">
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon1.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon2.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon3.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon4.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon5.png" alt="Img">
+                    </div>
+                    <div class="games__item">
+                      <div class="games__overlay"></div>
+                      <img class="games__img" src="/img/maks/icon6.png" alt="Img">
+                    </div>
+                  </div>
+                  <div class="block__subtitle">Платёжные системы:</div>
+                  <div class="block__icon">
+                    <img src="img/maks/pay1.png" alt="Icon">
+                    <img src="img/maks/pay2.png" alt="Icon">
+                    <img src="img/maks/pay3.png" alt="Icon">
+                    <img src="img/maks/pay4.png" alt="Icon">
+                    <img src="img/maks/pay5.png" alt="Icon">
+                    <img src="img/maks/pay6.png" alt="Icon">
+                    <img src="img/maks/pay7.png" alt="Icon">
+                    <img src="img/maks/pay8.png" alt="Icon">
+                    <img src="img/maks/pay9.png" alt="Icon">
+                  </div>
+                </div>
+                <div class="block__item">
+                  <div class="block__subtitle">Общая информация:</div>
+                  <ul class="block__list">
+                    <li>Год открытия - 1996</li>
+                    <li>Лицензия - UK Gambling</li>
+                    <li>Языки: РУС, ENG и +6</li>
+                    <li>Вывод денег: 1-3 дня</li>
+                    <li>Live Chat - Есть</li>
+                  </ul> 
+                  <a href="#" class="block__site">www.columbus.com</a> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="play__preview">
+            <div class="preview__img">
+              <img src="img/maks/preview.png" alt="Img">
+            </div>
+            <div class="play__btn play__btn--preview">
+                <a href="#">Играть</a>
+                <a class="play__more play__more--preview" href="#">Обзор</a>
+            </div>
+            <div class="play__text">CASINO COLUMBUS</div>
+            <div class="preview__number">99/100</div>
+            <div class="preview__price">1500€ + 200 free spins</div>
+            <a href="#" class="preview__site">www.columbus.com</a> 
+            <div class="preview__block">
+              <div class="block__subtitle">Игры:</div>
+              <div class="block__games">
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon1.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon2.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon3.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon4.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon5.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon6.png" alt="Img">
+                </div>
+              </div>
+            </div>
+            <div class="preview__curl"><span>4</span></div>
+          </div>
+          <div class="play__preview">
+            <div class="preview__img">
+              <img src="img/maks/preview.png" alt="Img">
+            </div>
+            <div class="play__btn play__btn--preview">
+                <a href="#">Играть</a>
+                <a class="play__more play__more--preview" href="#">Обзор</a>
+            </div>
+            <div class="play__text">CASINO COLUMBUS</div>
+            <div class="preview__number">99/100</div>
+            <div class="preview__price">1500€ + 200 free spins</div>
+            <a href="#" class="preview__site">www.columbus.com</a> 
+            <div class="preview__block">
+              <div class="block__subtitle">Игры:</div>
+              <div class="block__games">
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon1.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon2.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon3.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon4.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon5.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon6.png" alt="Img">
+                </div>
+              </div>
+            </div>
+            <div class="preview__curl"><span>5</span></div>
+          </div>
+          <div class="play__preview">
+            <div class="preview__img">
+              <img src="img/maks/preview.png" alt="Img">
+            </div>
+            <div class="play__btn play__btn--preview">
+                <a href="#">Играть</a>
+                <a class="play__more play__more--preview" href="#">Обзор</a>
+            </div>
+            <div class="play__text">CASINO COLUMBUS</div>
+            <div class="preview__number">99/100</div>
+            <div class="preview__price">1500€ + 200 free spins</div>
+            <a href="#" class="preview__site">www.columbus.com</a> 
+            <div class="preview__block">
+              <div class="block__subtitle">Игры:</div>
+              <div class="block__games">
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon1.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon2.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon3.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon4.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon5.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon6.png" alt="Img">
+                </div>
+              </div>
+            </div>
+            <div class="preview__curl"><span>6</span></div>
+          </div>
+          <div class="play__preview">
+            <div class="preview__img">
+              <img src="img/maks/preview.png" alt="Img">
+            </div>
+            <div class="play__btn play__btn--preview">
+                <a href="#">Играть</a>
+                <a class="play__more play__more--preview" href="#">Обзор</a>
+            </div>
+            <div class="play__text">CASINO COLUMBUS</div>
+            <div class="preview__number">99/100</div>
+            <div class="preview__price">1500€ + 200 free spins</div>
+            <a href="#" class="preview__site">www.columbus.com</a> 
+            <div class="preview__block">
+              <div class="block__subtitle">Игры:</div>
+              <div class="block__games">
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon1.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon2.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon3.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon4.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon5.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon6.png" alt="Img">
+                </div>
+              </div>
+            </div>
+            <div class="preview__curl"><span>7</span></div>
+          </div>
+          <div class="play__preview">
+            <div class="preview__img">
+              <img src="img/maks/preview.png" alt="Img">
+            </div>
+            <div class="play__btn play__btn--preview">
+                <a href="#">Играть</a>
+                <a class="play__more play__more--preview" href="#">Обзор</a>
+            </div>
+            <div class="play__text">CASINO COLUMBUS</div>
+            <div class="preview__number">99/100</div>
+            <div class="preview__price">1500€ + 200 free spins</div>
+            <a href="#" class="preview__site">www.columbus.com</a> 
+            <div class="preview__block">
+              <div class="block__subtitle">Игры:</div>
+              <div class="block__games">
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon1.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon2.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon3.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon4.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon5.png" alt="Img">
+                </div>
+                <div class="games__item">
+                  <div class="games__overlay"></div>
+                  <img class="games__img" src="/img/maks/icon6.png" alt="Img">
+                </div>
+              </div>
+            </div>
+            <div class="preview__curl"><span>8</span></div>
+          </div>
+        </div>
+     </div> 
+     <div class="onlineCasino__content">
+      <div class="onlineCasino__title">КРИТЕРИИ РЕЙТИНГА ОНЛАЙН КАЗИНО</div>
+        <div class="onlineCasino__text">Чтобы определить, какие самые лучшие казино существуют в России, все игорные заведения были протестированы в режиме онлайн. После длительной проверки на практике каждому веб-ресурсу была поставлена объективная оценка. Это довольно трудоемкий процесс, который базировался на сравнении одного игрового сайта с другим по ряду критериев:</div>
+        <div class="onlineCasino__info">
+          <div class="info__block">
+            <div class="info__title"  @click="Show($event)">
+              <div class="info__subtitle">Популярность ресурса</div>  
+            </div> 
+            <div class="info__content">
+              <div class="info__description">
+                <div ref="header" class="info__text" :class="{activeText : showText}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
+              </div>
+            </div> 
+          </div>
+          <div class="info__block">
+            <div class="info__title"  @click="Show($event)">
+              <div class="info__subtitle">Популярность ресурса</div>  
+            </div> 
+            <div class="info__content">
+              <div class="info__description">
+                <div ref="header" class="info__text" :class="{activeText : showText}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
+              </div>
+            </div> 
+          </div>
+        </div>
+        <div class="onlineCasino__text">Чтобы определить, какие самые лучшие казино существуют в России, все игорные заведения были протестированы в режиме онлайн. После длительной проверки на практике каждому веб-ресурсу была поставлена объективная оценка. Это довольно трудоемкий процесс, который базировался на сравнении одного игрового сайта с другим по ряду критериев:</div>  
+        <div class="onlineCasino__best">
+          <div class="best__title">
+            <div class="best__text">Лучший софт</div>
+          </div>
+          <div class="best__icon">
+            <div class="best__item">
+              <img src="img/maks/best1.png" alt="Img">
+            </div>
+            <div class="best__item">
+              <img src="img/maks/best2.png" alt="Img">
+            </div>
+            <div class="best__item">
+              <img src="img/maks/best3.png" alt="Img">
+            </div>
+            <div class="best__item">
+              <img src="img/maks/best4.png" alt="Img">
+            </div>
+            <div class="best__item">
+              <img src="img/maks/best5.png" alt="Img">
+            </div>
+            <div class="best__item">
+              <img src="img/maks/best6.png" alt="Img">
+            </div>
+          </div>
+        </div>
+        <div class="onlineCasino__title">КТО ПОПАЛ В НАШ РЕЙТИНГ ИНТЕРНЕТ КАЗИНО?</div>
+        <div class="onlineCasino__youtube">
+          <div class="youtube__video">
+            <img src="img/maks/youtube.png" alt="Img">
+          </div>
+          <div class="youtube__info">
+            <div class="youtube__item">
+              <img class="youtube__img" src="img/maks/youtube1.png" alt="Img"> 
+              <div class="youtube__text">Заведения с хорошей отдачей;</div>
+            </div>
+            <div class="youtube__item">
+              <img class="youtube__img" src="img/maks/youtube2.png" alt="Img"> 
+              <div class="youtube__text">Азартные клубы с возможностью получения бонусов за дополнительные функции;</div>
+            </div>
+            <div class="youtube__item">
+              <img class="youtube__img" src="img/maks/youtube3.png" alt="Img"> <div class="youtube__text">Русскоязычные виртуальные площадки с обширным выбором игр;</div>
+            </div>
+            <div class="youtube__item">
+              <img class="youtube__img" src="img/maks/youtube4.png" alt="Img"> <div class="youtube__text">Лицензионные организации, у которых денежные средства игроков и их личные данные надежно защищены;</div>
+            </div>
+            <div class="youtube__item">
+              <img class="youtube__img" src="img/maks/youtube5.png" alt="Img"> <div class="youtube__text">Игровые онлайн-площадки с большим выбором платежных систем и пользовательской службой поддержки.</div>
+            </div>
+          </div>
+        </div>
+     </div> 
+   </div>
+</div>
+
+
+
+
+
+
+<div class="onlineCasino">
+    
+  </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+  
+</footer>
+
+
+ 
+
+<script>
+
+
+var onlineCasino = new Vue({
+  el: '#onlineCasino',
+  data: {
+    showText: false
+  },
+  methods: {
+   Show(e) {
+    this.$refs.header.classList.add('activeText')
+   }
+  }
+})  
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+<script src="dist/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script>
+
+
+
+
+  
+
+var animatedElem = $('[data-animated]');
+    
+    $(window).scroll(function() {
+      animatedElem.each(function(){
+          
+        var animatedArr = $(this).attr('data-animated');
+          animatedArr = animatedArr.split(' ');
+        var animatedPos = animatedArr[0],
+          animatedName = animatedArr[1],
+          animatedTime = animatedArr[2],
+          animatedEnd = animatedArr[3],
+            topOfWindow = $(window).scrollTop(),
+          windowHeight = $(window).height();
+        
+        if (animatedPos <= topOfWindow && $(this).hasClass('animated-ended') == false) {
+          $(this).removeClass('hide ' + animatedEnd);
+          $(this).addClass('animated-ended animated ' + animatedName);
+          $(this).css({'animation-duration' : animatedTime});
+        }
+        else if($(this).hasClass('animated-ended') && animatedPos > topOfWindow){
+          $(this).removeClass('animated-ended animated ' + animatedName);
+        }
+      });
+  });
+
+     
+
+$('.content__slider').owlCarousel({
+      loop:true,
+      margin:10,
+      slideSpeed: 4000,
+      nav:true,
+      autoplayTimeout: 4500,
+      responsive:{
+          0:{
+              items:1
+          },
+          768:{
+              items:2
+          },
+          992:{
+              items:3
+          },
+          1200:{
+              items:3
+          },
+          1600:{
+              items:3
+          },
+          1900:{
+              items:3
+          },
+          1920:{
+              items:3
+          }
+      }
+  })
+
+
+/*       
+
+$('.comments__content').owlCarousel({
+      loop:true,
+      margin:10,
+      slideSpeed: 4000,
+      nav:true,
+      autoplayTimeout: 4500,
+      responsive:{
+          0:{
+              items:1
+          },
+          768:{
+              items:1
+          },
+          992:{
+              items:1
+          },
+          1200:{
+              items:1
+          },
+          1600:{
+              items:1
+          },
+          1900:{
+              items:1
+          },
+          1920:{
+              items:1
+          }
+      }
+  })
+*/
+
+$(window).scroll(function() { 
+
+let text = ($(window).scrollTop()); 
+$('#div').text(text); 
+
+}); 
+
+    
+    
+
+
+
+    </script> 
+</body>
+</html>

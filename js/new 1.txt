@@ -1,0 +1,1389 @@
+/*----------
+синий цвет бэкграунда - #080a49
+
+цвет текста пункта меню - #547f0e
+цвет текста активного пункта меню - #ba440c
+
+цвет текста, основой - #58595b
+цвет текста, синий - #143359
+----------*/
+
+/*подключаем шрифты*/
+@font-face {
+    font-family: PT_Sans;
+    src: url(../fonts/pt-sans.ttf) format('truetype'),
+    url(../fonts/pt-sans.woff) format('woff');
+}
+@font-face {
+    font-family: PT_Sans_Bold;
+    src: url(../fonts/pt-sans-bold.ttf) format('truetype'),
+    url(../fonts/pt-sans-bold.woff) format('woff');
+}
+@font-face {
+    font-family: PT_Serif_Bold;
+    src: url(../fonts/pt-serif-bold.ttf) format('truetype'),
+    url(../fonts/pt-serif-bold.woff) format('woff');
+}
+
+
+/*grid*/
+.container {width:100%; height:auto; margin:0 auto; display:table;} /*ширина задана*/
+.row {display:table-row;}
+.cols{display:table-cell;vertical-align:top;}
+.container .cols.col-1{width:8.33333333333333%;}
+.container .cols.col-2{width:16.66666666666666%;}
+.container .cols.col-3{width:25%;}
+.container .cols.col-4{width:33.3333333333333%;}
+.container .cols.col-5{width:41.6666666666666%;}
+.container .cols.col-6{width:50%;}
+.container .cols.col-7{width:58.3333333333333%;}
+.container .cols.col-8{width:66.6666666666666%;}
+.container .cols.col-9{width:75%;}
+.container .cols.col-10{width:83.3333333333333%;}
+.container .cols.col-11{width:91.6666666666666%;}
+.container .cols.col-12{width:100%;}
+
+.container .cols.col-left{width: 76.5%;}
+.container .cols.col-right{width:23.5%;}
+.container .cols.col-left + .tpl-block-list{width:23.5%;display:table-cell;vertical-align: top;position:relative;}
+.container .cols.col-left + .tpl-block-list .cols.col-right{display:block;width:100%;position:absolute;min-height:100%;}
+
+/*стили по умолчанию*/
+*{margin:0; padding:0; outline:none; box-sizing:border-box;line-height:1;}
+html{width:100%; height:100%;}
+body{width:100%;min-width:1200px;height:100%;background-color:#f0f1f5;font-family:PT_Sans, sans-serif;font-size:16px;color:#393939;position:relative;}
+header, section, footer{position:relative;}
+footer{z-index:4;}
+ul{list-style:none;}
+a{text-decoration:none;color:#ba440c;}
+a:hover{text-decoration:underline;}
+a:active{text-decoration:none;}
+img{border:none;}
+/*h1, .h1{font-family:Arial_Narrow;font-size:2.063em;text-transform:uppercase;}*/
+h1, .h1, h2, .h2{font-family: PT_Sans_Bold;font-size:2.250em;font-weight:normal;}
+h1, .h1{margin-bottom:20px;}
+h3, .h3{font-size:1.875em;font-weight:normal;}
+h4, .h4{font-family: PT_Sans_Bold;font-size:1em;font-weight:normal;}
+input, textarea{font-size:1em;font-family:PT_Sans;}
+
+.bold{font-weight:bold;}
+.uppercase{text-transform:uppercase;}
+.container_block{width:1150px;margin:0 auto;}
+.empty_span{display:inline-block;width:0;height:100%;vertical-align:middle;}
+.main_wrapper{min-height:100%;position:relative;}
+.clear{clear:both;}
+
+/*кнопки*/
+.btn{display:inline-block;width:90px;height:30px;border:1px solid transparent;border-radius:15px;color:#ffffff;text-align:center;line-height:26px;}
+.btn:hover{text-decoration:none;}
+.btn.white{background-color:#ffffff;border:1px solid #ba440c;color:#ba440c;}
+.btn.orange{background-color:#ba440c;}
+.btn.green{background-color:#547e0e;box-shadow:0 0 6px 2px rgba(0,0,0,.3);}
+.btn.big{width:186px;height:56px;border-radius:28px;font-family: PT_Sans_Bold;font-size:1.5em;text-align:center;line-height:52px;}
+.btn.orange.big{background-color:#ba440c;color:#ffffff;}
+.btn.white.big{background-color:#ffffff;color:#ba440c;}
+.btn.white:hover{background-color:#ba440c;color:#ffffff;}
+.btn.white:active{background-color:#ba440c;box-shadow:inset 0 0 8px 0 rgba(0,0,0,.25);color:#ffffff;}
+.btn.orange:hover{background-color:#f2611c;}
+.btn.orange:active{background-color:#ad3e09;box-shadow:inset 0 0 8px 0 rgba(0,0,0,.25);}
+.btn.green:hover,
+.btn.green:active{box-shadow:inset 0 0 8px 0 rgba(0,0,0,.25);}
+.show_all{width:200px;height:36px;line-height:32px;border-radius:18px;font-size:1.125em;}
+
+/*блок с серым бэкраундом*/
+.block_grey_bg{padding:15px 20px 20px;background-color:#f5f5f5;border:1px solid #efefef;border-radius:5px;box-shadow:0 0 6px 2px rgba(0,0,0,.15);}
+
+/*вспомогательный элемент для таблиц*/
+.empty_row{display:table-row;height: 10px;}
+
+/*позиционируем изображения в тексте*/
+.img_float_left{float:left;margin:15px 40px 15px 0;}
+.img_float_right{float:right;margin:15px 0 15px 40px;}
+.img_float_left.top,
+.img_float_right.top{margin-top:0;}
+.img_float_left.bottom,
+.img_float_right.bottom{margin-bottom:0;}
+
+/*читать полностью текст, блок с шевроном и текстом для вывода полного текста*/
+.read_all_text{cursor:pointer;}
+.read_all_text div,
+.read_all_text span{display:inline-block;vertical-align:middle;}
+.read_all_text div{padding-right:10px;font-size:.875em;color:#ba440c;}
+.read_all_text span{width:26px;height:26px;border:1px solid #ba440c;border-radius:13px;position:relative;}
+.read_all_text span i{font-size:1.25em;color:#000000;position:absolute;top:2px;left:9px;transition-duration:.3s;}
+.read_all_text.open span i{left:8px;transform:rotate(-90deg);transition-duration:.3s;}
+
+
+body{background-color:#080a49;}
+.content_wrap{margin-bottom:40px;}
+.top_bg{position:fixed;z-index:1;width:100%;height:1217px;background:url(../img/top_bg3.png) no-repeat center top;}
+.add_bg_body{position:absolute;top:0;left:0;z-index:2;width:100%;min-height:100%;}
+
+.main_block{width:1200px;height:auto;margin:95px auto 0;padding:0 34px;background-color:#ffffff;border-radius:18px 18px 0 0;box-shadow:0 0 5px 4px rgba(0,0,0,.2);position:relative;}/*высоту убрать потом*/
+.main_block .main_logo{width:100%;text-align:center;position:absolute;top:-95px;left:0;z-index:1;}
+.main_block .main_logo a{display:inline-block;}
+
+
+/*ХЭДЕР*/
+header{margin-bottom:45px;}
+header .top_menu{position:relative;height:75px;margin-bottom:30px;}
+header .top_menu ul[data-top_menu="1"]{left:0;}
+header .top_menu ul[data-top_menu="2"]{right:0;text-align:right;}
+header .top_menu ul[data-top_menu] {position:absolute;bottom:0;z-index:2;width:25%;border-bottom:1px solid #e5e5e5;text-align:justify;line-height:0;font-size:1px;text-align-last:justify;}
+header .top_menu > ul:after{width: 100%;height:0;visibility: hidden;overflow: hidden;content: '';display: inline-block;}
+header .top_menu > ul > li{width: auto;display: inline-block;text-align: left;position: relative;line-height: normal;vertical-align: top;padding-bottom:15px;font-size:16px;}
+header .top_menu > ul > li a{font-family: PT_Sans_Bold;font-size:1.125em;color:#547f0e;}
+header .top_menu > ul > li:hover > a,
+header .top_menu > ul > li.active > a{text-decoration:none;color:#f2611c;}
+header .top_menu > ul > li:active > a{color:#ba440c;}
+header .top_menu > ul > li i{margin-left:5px;font-size:1.556em;color:#000000;line-height:0;position:relative;top:4px;}
+header .top_menu > ul > li:hover i{transform:rotate(180deg);transition-duration:.3s;}
+header .top_menu li ul{display:none;width:265px;background-color:#ffffff;border:1px solid #bdbdbd;border-top:1px solid #ba440c;border-radius:0 0 10px 10px;box-shadow:0 5px 5px 1px rgba(0,0,0,.4);overflow:hidden;position:absolute;top:100%;left:0;}
+header .top_menu ul[data-top_menu="2"] li:last-child ul{left:inherit;right:0;}
+header .top_menu li ul li{display:block;height:35px;padding-left:20px;}
+header .top_menu li ul li:nth-child(even){background-color:#f2f6ff;}
+header .top_menu li ul li a{display:block;height:100%;padding-left:20px;font-size:0.889em;color:#638c30;text-align:left;text-align-last:left;line-height:35px;position:relative;}
+header .top_menu li ul li:hover,
+header .top_menu li ul li.active{background-color:#709546;}
+header .top_menu li ul li:hover a,
+header .top_menu li ul li.active a{text-decoration:none;color:#ffffff;}
+header .top_menu li ul li:active{background-color:#ffffff;}
+header .top_menu li ul li:active a{text-decoration:none;color:#ba440c;}
+header .top_menu li ul[data-into_menu] a:before{content:url(../img/clubs.svg);width:8px;height:8px;position:absolute;left:0;height:100%;line-height:35px;}
+
+header .action_block{width:100%;height:360px;margin-bottom:20px;background-color:#001955;position:relative;}
+header .action_block .add_bg_action_block{width:100%;height:100%;background:url(../img/action_bg.png) no-repeat right top;padding:40px 25px 30px 40px;}
+header .action_block h2{font-size:2.125em;color:#ba440c;}
+header .action_block h3{margin-bottom:40px;color:#ba440c;}
+header .action_block h4{margin-bottom:15px;font-family: PT_Sans;font-size:1.500em;color:#ffce5a;}
+header .action_block ul li{width:225px;margin-bottom:5px;font-size:.875em;color:#ffffff;line-height:1.1;}
+header .action_block ul li:last-child{width:155px;margin-bottom:0;}
+header .action_block .time_counter_wrap{position:absolute;right:25px;bottom:30px;}
+header .action_block .time_counter{width:186px;height:110px;margin-bottom:30px;padding:10px 0;background-color:#fff2ae;border:1px solid #807128;border-radius:8px;text-align:center;position:relative;}
+header .action_block .time_counter h3{margin-bottom:10px;font-size:1.438em;color:#000000;text-align:center;}
+header .action_block .time_counter .action_clock_add_bg{position:absolute;top:41px;width:100%;height:39px;}
+header .action_block .time_counter .action_clock_add_bg span{position:relative;display:inline-block;width:36px;height:100%;background-color:#ffffff;border:1px solid #ebe189;border-radius:5px;box-shadow:0 0 4px 0 rgba(0,0,0,.15);}
+header .action_block .time_counter .action_clock_add_bg span[data-add_bg="1"]{left:-6px;}
+header .action_block .time_counter .action_clock_add_bg span[data-add_bg="2"]{left:-1px;}
+header .action_block .time_counter .action_clock_add_bg span[data-add_bg="3"]{left:1px;}
+header .action_block .time_counter .action_clock_add_bg span[data-add_bg="4"]{left:6px;}
+
+header .image_menu{width:100%;text-align:justify;line-height:0;font-size:1px;text-align-last:justify;}
+header .image_menu:after{width: 100%;height: 0;visibility: hidden;overflow: hidden;content: '';display: inline-block;}
+header .image_menu li{width:23.4%;height:150px;display: inline-block;text-align: left;position: relative;line-height: normal;vertical-align: top;font-size:16px;}
+header .image_menu li a{display:block;height:100%;background-size:cover;font-family: PT_Sans_Bold;text-align:left;color:#ffffff;position:relative;box-shadow:inset 0 -40px 35px 10px rgba(0,0,0,.7);}
+header .image_menu li[data-image_menu="1"]{background:url(../img/img_menu_1.jpg) no-repeat center;}
+header .image_menu li[data-image_menu="2"]{background:url(../img/img_menu_2.jpg) no-repeat center;}
+header .image_menu li[data-image_menu="3"]{background:url(../img/img_menu_3.jpg) no-repeat center;}
+header .image_menu li[data-image_menu="4"]{background:url(../img/img_menu_4.jpg) no-repeat center;}
+header .image_menu li a:hover{background-color:rgba(186,68,12,.6);}
+header .image_menu li a span{position:absolute;bottom:15px;}
+header .image_menu li a .name_item_menu{left:15px;}
+header .image_menu li a .img_item_menu{right:15px;}
+header .image_menu li[data-image_menu="2"] .img_item_menu,
+header .image_menu li[data-image_menu="3"] .img_item_menu,
+header .image_menu li[data-image_menu="4"] .img_item_menu{bottom:8px;}
+header .image_menu li[data-image_menu="1"] .img_item_menu img{width:86px;height:15px;}
+header .image_menu li[data-image_menu="2"] .img_item_menu img{width:25px;height:26px;}
+header .image_menu li[data-image_menu="3"] .img_item_menu img{width:24px;height:24px;}
+header .image_menu li[data-image_menu="4"] .img_item_menu img{width:38px;height:22px;}
+
+
+/*-----БЛОКИ С КОНТЕНТОМ-----*/
+/*-----ЛЕВЫЙ БЛОК-----*/
+/*хлебные крошки*/
+.bread_crumbs{margin-bottom:25px;}
+.bread_crumbs a{text-decoration:underline;color:#000000;}
+.bread_crumbs a:hover{text-decoration:none;}
+.bread_crumbs span{color:#9a9a9a;}
+
+/*топ 5 казино*/
+.top_five{margin-bottom:45px;}
+.top_five h2{margin-bottom:20px;}
+.top_five p{margin-bottom:10px;font-size:1em;}/*.875em - 1em*/
+
+/*рейтинг топ 5*/
+.rating_table_wrap{margin-bottom:45px;}
+.rating_table_wrap h3{margin-bottom:20px;}
+.rating_table_wrap .rating_table{width:100%;border:none;}
+.rating_table_wrap .rating_table .header_table{height:50px;margin-bottom:10px;background-color:#638c30;box-shadow:0 0 6px 2px rgba(0,0,0,.15);font-size:.875em;color:#ffffff;}
+.rating_table_wrap .rating_table .header_table .cols{padding-left:10px;vertical-align:middle;line-height:1.3;}
+.rating_table_wrap .rating_table .header_table .cols:first-child{border-radius:5px 0 0 0;}
+.rating_table_wrap .rating_table .header_table .cols:last-child{border-radius:0 5px 0 0;}
+.rating_table_wrap .rating_table .body_table{margin-bottom:10px;box-shadow:0 0 6px 2px rgba(0,0,0,.15);border-radius:5px;background-color:#ffffff;}
+.rating_table_wrap .rating_table .body_table:nth-child(4n+5){background-color:#f5f5f5;}
+.rating_table_wrap .rating_table .body_table .cols{min-height:130px;vertical-align:middle;padding-left:10px;}
+.rating_table_wrap .rating_table .body_table div[data-rating_table="1"]{width:5%;vertical-align:top;}
+.rating_table_wrap .rating_table .body_table div[data-rating_table="2"]{width:15%;position:relative;}
+.rating_table_wrap .rating_table .body_table div[data-rating_table="3"]{width:25%;padding:10px 0 10px 10px;font-size:.875em}
+.rating_table_wrap .rating_table .body_table div[data-rating_table="4"]{width:30%;}
+.rating_table_wrap .rating_table .body_table div[data-rating_table="5"]{width:10%;}
+.rating_table_wrap .rating_table .body_table div[data-rating_table="6"]{width:15%;}
+.rating_table_wrap .rating_table .flag{display:inline-block;width:36px;margin-left:7px;font-size:1.500em;color:#ffffff;text-align:center;}
+.rating_table_wrap .rating_table .flag:before{content:"";border:6px solid transparent;position:absolute;top:100%;left:0;}
+.rating_table_wrap .rating_table .flag:after{content:"";border:6px solid transparent;position:absolute;top:100%;right:0;}
+.rating_table_wrap .rating_table .flag.red{height:37px;background:linear-gradient(to top, #ba440c 0%, #d17026 100%);border-top:1px solid #ba440c;position:relative;line-height:35px;}
+.rating_table_wrap .rating_table .flag.red:before{border-left:13px solid #ba440c;border-top:3px solid #ba440c;}
+.rating_table_wrap .rating_table .flag.red:after{border-right:13px solid #ba440c;border-top:3px solid #ba440c;}
+.rating_table_wrap .rating_table .flag.green{height:30px;background:linear-gradient(to top, #638c30 0%, #799d2b 100%);border-top:1px solid #638c30;position:relative;line-height:28px;}
+.rating_table_wrap .rating_table .flag.green:before{border-left:13px solid #638c30;border-top:3px solid #638c30;}
+.rating_table_wrap .rating_table .flag.green:after{border-right:13px solid #638c30;border-top:3px solid #638c30;}
+.rating_table_wrap .rating_table div[data-rating_table="2"] div{text-align:center;margin:5px 0 20px;box-shadow:0 7px 5px -5px rgba(0,0,0,.15);/*position:relative;*/}
+.rating_table_wrap .rating_table div[data-rating_table] .casino_logo{margin:12px 0 20px;}
+.rating_table_wrap .rating_table div[data-rating_table="3"] p{margin-bottom:15px;}
+.rating_table_wrap .rating_table div[data-rating_table="3"] p:last-child{margin-bottom:0;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] ul{margin-top:10px;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] ul li{display:inline-block;width:30%;margin-bottom:10px;vertical-align:top;text-align:center;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] ul li:nth-child(n+3){margin-bottom:10px;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] ul li div.icon_block{display:inline-block;width:33px;height:24px;overflow:hidden;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] ul li div.icon_block span{display:inline-block;width:198px;height:50px;background:url(../img/icons_main_rating.svg) no-repeat;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="1"] div.icon_block span{background-position:0 0;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="2"] div.icon_block span{background-position:-33px 0;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="3"] div.icon_block span{background-position:-66px 0;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="4"] div.icon_block span{background-position:-99px 0;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="5"] div.icon_block span{background-position:-132px 0;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="6"] div.icon_block span{background-position:-165px 0;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="1"].active div.icon_block span{background-position:0 -24px;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="2"].active div.icon_block span{background-position:-33px -26px;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="3"].active div.icon_block span{background-position:-66px -26px;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="4"].active div.icon_block span{background-position:-99px -26px;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="5"].active div.icon_block span{background-position:-132px -26px;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] li[data-functionality="6"].active div.icon_block span{background-position:-165px -26px;}
+.rating_table_wrap .rating_table div[data-rating_table="4"] ul li div.name_functionality{font-size:0.688em;text-align:center;}
+.rating_table_wrap .rating_table div[data-rating_table="5"]{text-align:center;position:relative;}
+.rating_table_wrap .rating_table div[data-rating_table="5"] > ul > li{margin-bottom:5px;cursor:pointer;position:relative;}
+.rating_table_wrap .rating_table div[data-rating_table="5"] > ul > li i{display:block;font-size:1.556em;margin-top:-5px;}
+.rating_table_wrap .rating_table div[data-rating_table="5"] > ul li.soft_license_menu:hover i.fa-angle-down{transform:rotate(180deg);/*transition-duration:.3s;*/}
+.rating_table_wrap .rating_table div[data-rating_table="5"] > ul > li:last-child{margin-bottom:0;}
+.rating_table_wrap .rating_table div[data-rating_table="5"] ul li.soft_license_menu ul{display:none;position:absolute;top:100%;left:0;z-index:10;width:160px;height:auto;background-color:#ffffff;border-radius:6px;box-shadow:0 4px 10px 2px rgba(0,0,0,.35);text-align:left;}
+.rating_table_wrap .rating_table div[data-rating_table="5"] ul li.soft_license_menu ul li{display:inline-block;width:45%;vertical-align:middle;padding:10px;text-align:center;}
+.rating_table_wrap .rating_table div[data-rating_table="5"] ul li.soft_license_menu ul li img{width:95%;height:auto;}
+.rating_table_wrap .rating_table div[data-rating_table] .btn{margin-bottom:15px;}
+.rating_table_wrap .rating_table div[data-rating_table] .btn:last-child{margin-bottom:0;}
+
+/*Лидеры топ 5 бонусов*/
+.leaders_top_five{margin-bottom:45px;}
+.leaders_top_five h3{margin-bottom:20px;}
+.leaders_top_five ul li{margin-bottom:10px;padding:15px 20px 20px;border:1px solid #efefef;border-radius:5px;box-shadow:0 0 6px 2px rgba(0,0,0,.15);position:relative;}
+.leaders_top_five ul li:last-child{margin-bottom:0;}
+.leaders_top_five ul li p{margin-bottom:35px;font-size:.875em;}
+.leaders_top_five ul li .btn{height:34px;line-height:30px;border-radius:17px;}
+.leaders_top_five ul li .btn.white{width:140px;margin-right:20px;}
+.leaders_top_five ul li .btn.orange{width:200px;}
+.leaders_top_five ul li .position_ranking{position:absolute;right:20px;bottom:2px;}
+.leaders_top_five ul li .position_ranking span{vertical-align:middle;color:#979797;font-size:.875em;}
+.leaders_top_five ul li div[data-position_ranking] .position_ranking_img{display:inline-block;width:70px;height:70px;margin-left:10px;background-size:100% 100%;text-align:center;line-height:64px;position:relative;top:-4px;}
+.leaders_top_five ul li div[data-position_ranking] .position_ranking_img span{font-size:1.714em;color:#000000;position:relative;left:-1px;}
+.leaders_top_five ul li div[data-position_ranking="1"] .position_ranking_img{background:url(../img/first_place_img.svg) no-repeat;}
+.leaders_top_five ul li div[data-position_ranking="2"] .position_ranking_img{background:url(../img/second_place_img.svg) no-repeat;}
+.leaders_top_five ul li div[data-position_ranking="3"] .position_ranking_img{background:url(../img/third_place_img.svg) no-repeat;}
+
+/*Как создавался рейтинг Топ 5?*/
+.how_make_rating{margin-bottom:45px;}
+.how_make_rating h3{margin-bottom:20px;}
+.how_make_rating p{font-size:1em;}/*.875em - 1em*/
+.how_make_rating ul{text-align: justify;line-height: 0;font-size: 1px;text-align-last: justify;margin:20px 0 20px;}
+.how_make_rating ul:after{width: 100%;height: 0px;visibility: hidden;overflow: hidden;content: '';display: inline-block;}
+.how_make_rating ul li{width: auto;height: auto;display: inline-block;text-align: left;line-height: normal;vertical-align: top;}
+
+/*рейтинг топ 5 лучших казино*/
+.best_casino .rating_table_wrap .rating_table div[data-rating_table] .crown_first{width:49px;height:23px;}
+.best_casino .rating_table_wrap .rating_table div[data-rating_table] .crown{width:38px;height:26px;}
+.best_casino .rating_table_wrap .rating_table div[data-rating_table] .first_bonus,
+.best_casino .rating_table_wrap .rating_table div[data-rating_table] .second_bonus,
+.best_casino .rating_table_wrap .rating_table div[data-rating_table] .first_mobile_casino,
+.best_casino .rating_table_wrap .rating_table div[data-rating_table] .second_mobile_casino{display:none;}
+
+/*рейтинг топ 5 лучших бонусов*/
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .crown_first,
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .crown,
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .first_mobile_casino,
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .second_mobile_casino{display:none;}
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table="2"] div{margin:0;box-shadow:none;}
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .casino_logo{margin:0;}
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table="3"] p{font-family: PT_Sans_Bold;}
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .first_bonus,
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .second_bonus{position:absolute;top:60px;}
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .first_bonus{width:62px;height:42px;left:-20px;}
+.best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .second_bonus{width:54px;height:38px;left:-15px;}
+
+/*рейтинг топ 5 лучших мобильных казино*/
+.best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .crown_first,
+.best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .crown,
+.best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .first_bonus,
+.best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .second_bonus{display:none;}
+.best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table="2"] div{margin:0;box-shadow:none;}
+.best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .casino_logo{margin:0;}
+.best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .first_mobile_casino,
+.best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .second_mobile_casino{position:absolute;bottom:0;left:-53px;}
+.best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .first_mobile_casino{width:69px;height:57px;}
+.best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .second_mobile_casino{width:59px;height:47px;}
+
+
+/*-----ВНУТРЕННИЕ СТРАНИЦЫ-----*/
+/*-----Меню рейтингов-----*/
+.ratings_menu_wrap{}
+.ratings_menu{margin:20px 0 20px;}
+.ratings_menu li{display:inline-block;width:192px;margin:0 25px 30px 0;padding-bottom:35px;border-bottom:1px solid #e5e5e5;vertical-align:top;position:relative;}
+.ratings_menu li:nth-child(4){margin-right:0;}
+.ratings_menu li[data-ratings_menu] div{width:100%;height:135px;border-radius:5px;box-shadow: 0 0 6px 0 rgba(0,0,0,.15);position:relative;}
+.ratings_menu li[data-ratings_menu]:hover div:before{content:"";position:absolute;top:0;left:0;display:block;width:100%;height:100%;background-color:rgba(186,68,12,.6);border-radius:5px;}
+.ratings_menu li[data-ratings_menu] div span{display:block;width:40px;height:40px;border:1px solid #ebe189;border-radius:20px;background-color:#ffffff;text-align:center;line-height:46px;position:absolute;bottom:-20px;right:8px;}
+.ratings_menu li[data-ratings_menu] a > span{display:inline-block;font-family: PT_Sans_Bold;color:#000000;text-decoration:none;position:relative;top:20px;}
+.ratings_menu li[data-ratings_menu]:hover a > span{color:#ba440c;}
+
+/*страны*/
+.ratings_menu.country li[data-ratings_menu="1"] div{background:url(../img/rating_country_1.png) no-repeat;background-size:cover;}
+.ratings_menu.country li[data-ratings_menu="2"] div{background:url(../img/rating_country_2.png) no-repeat;background-size:cover;}
+.ratings_menu.country li[data-ratings_menu="3"] div{background:url(../img/rating_country_3.png) no-repeat;background-size:cover;}
+.ratings_menu.country li[data-ratings_menu="4"] div{background:url(../img/rating_country_4.png) no-repeat;background-size:cover;}
+.ratings_menu.country li[data-ratings_menu="5"] div{background:url(../img/rating_country_5.png) no-repeat;background-size:cover;}
+.ratings_menu.country li[data-ratings_menu] div span{overflow:hidden;}
+
+/*софт*/
+.ratings_menu.soft li[data-ratings_menu="1"] div{background:url(../img/rating_soft_1.png) no-repeat;background-size:cover;}
+.ratings_menu.soft li[data-ratings_menu="2"] div{background:url(../img/rating_soft_2.png) no-repeat;background-size:cover;}
+.ratings_menu.soft li[data-ratings_menu="3"] div{background:url(../img/rating_soft_3.png) no-repeat;background-size:cover;}
+.ratings_menu.soft li[data-ratings_menu="4"] div{background:url(../img/rating_soft_4.png) no-repeat;background-size:cover;}
+.ratings_menu.soft li[data-ratings_menu="1"] div span img{width:13px;height:22px;}
+.ratings_menu.soft li[data-ratings_menu="2"] div span img{width:24px;height:18px;position:relative;top:-3px;}
+.ratings_menu.soft li[data-ratings_menu="3"] div span img{width:21px;height:21px;}
+.ratings_menu.soft li[data-ratings_menu="4"] div span img{width:21px;height:21px;}
+
+/*валюты*/
+.ratings_menu.money li[data-ratings_menu="1"] div{background:url(../img/rating_money_1.png) no-repeat;background-size:cover;}
+.ratings_menu.money li[data-ratings_menu="2"] div{background:url(../img/rating_money_2.png) no-repeat;background-size:cover;}
+.ratings_menu.money li[data-ratings_menu="3"] div{background:url(../img/rating_money_3.png) no-repeat;background-size:cover;}
+.ratings_menu.money li[data-ratings_menu="4"] div{background:url(../img/rating_money_4.png) no-repeat;background-size:cover;}
+.ratings_menu.money li[data-ratings_menu] div span{line-height:42px;}
+.ratings_menu.money li[data-ratings_menu] div span i{font-size:1.5em;color:#638c30;}
+.ratings_menu.money li[data-ratings_menu="2"] div span i{position:relative;left:-2px;}
+
+/*игры*/
+.ratings_menu.games li[data-ratings_menu="1"] div{background:url(../img/slots_games.jpg) no-repeat;background-size:cover;}
+.ratings_menu.games li[data-ratings_menu="2"] div{background:url(../img/roulette_games.jpg) no-repeat;background-size:cover;}
+.ratings_menu.games li[data-ratings_menu="3"] div{background:url(../img/black_jack_games.jpg) no-repeat;background-size:cover;}
+.ratings_menu.games li[data-ratings_menu="4"] div{background:url(../img/poker_games.jpg) no-repeat;background-size:cover;}
+.ratings_menu.games li[data-ratings_menu="5"] div{background:url(../img/bingo_games.jpg) no-repeat;background-size:cover;}
+.ratings_menu.games li[data-ratings_menu="1"] div span img{width:23px;height:21px;}
+.ratings_menu.games li[data-ratings_menu="2"] div span img{width:20px;height:20px;}
+.ratings_menu.games li[data-ratings_menu="3"] div span img{width:22px;height:22px;}
+.ratings_menu.games li[data-ratings_menu="4"] div span img{width:22px;height:21px;}
+.ratings_menu.games li[data-ratings_menu="5"] div span img{width:21px;height:24px;}
+
+/*платформы*/
+.ratings_menu.platform li[data-ratings_menu="1"] div{background:url(../img/rating_platform_1.png) no-repeat;background-size:cover;}
+.ratings_menu.platform li[data-ratings_menu="2"] div{background:url(../img/rating_platform_2.png) no-repeat;background-size:cover;}
+.ratings_menu.platform li[data-ratings_menu="3"] div{background:url(../img/rating_platform_3.png) no-repeat;background-size:cover;}
+.ratings_menu.platform li[data-ratings_menu="4"] div{background:url(../img/rating_platform_4.png) no-repeat;background-size:cover;}
+.ratings_menu.platform li[data-ratings_menu="5"] div{background:url(../img/rating_platform_5.png) no-repeat;background-size:cover;}
+.ratings_menu.platform li[data-ratings_menu] div span img{width:16px;height:24px;}
+
+
+/*-----игры-----*/
+.into_header_block{margin-bottom:20px;}
+.into_header_block h2{margin-bottom:20px;}
+.into_header_block img.img_float_left{margin-right:30px;}
+.into_header_block p{font-size:.875em;margin-bottom:10px;}
+.into_header_block p:last-child{margin-bottom:0;}
+
+.into_header_block + .clear{margin-top:50px;}
+
+.into_body_block{margin-bottom:40px;}
+.into_body_block h2{margin-bottom:20px;}
+
+.main_description_games{margin-bottom:45px;}
+.main_description_games h3{margin-bottom:20px;}
+.main_description_games p{margin-bottom:10px;font-size:.875em;}
+.main_description_games p:last-child{margin-bottom:0;}
+
+/*игры, сайдбар*/
+.tip_day_wrap{display:inline-block;width:100%;margin-bottom:45px;color:#000000;text-decoration:none;}
+.tip_day_wrap:hover{text-decoration:none;}
+.tip_day_wrap h3{margin-bottom:25px;}
+.tip_day_wrap .tip_day{padding:15px 20px;border:1px solid #EBE189;border-radius:5px;position:relative;box-shadow:0 0 4px 0 rgba(0,0,0,.15);}
+.tip_day_wrap .tip_day:before{content:"";border:15px solid transparent;border-left:10px solid #EBE189;border-bottom:20px solid #EBE189;position:absolute;bottom:100%;right:60px;}
+.tip_day_wrap .tip_day:after{content:"";border:13px solid transparent;border-left:9px solid #ffffff;border-bottom:19px solid #ffffff;position:absolute;bottom:99%;right:62px;}
+.tip_day_wrap .tip_day img{width:100%;height:auto;margin-bottom:10px;}
+.tip_day_wrap .tip_day h4{font-family: PT_Sans;font-size:1.125em;color:#638c30;margin-bottom:10px;}
+.tip_day_wrap .tip_day p{font-size:.875em;color:#000000;}
+
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(1){padding-left:10px;position:relative;}
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(1) .flag{display:inline-block;width:18px;font-size:.75em;color:#ffffff;text-align:center;line-height:15px;position:absolute;top:0;left:0;z-index:2;}
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(1) .flag:before{content:"";border:3px solid transparent;position:absolute;top:100%;left:0;}
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(1) .flag:after{content:"";border:3px solid transparent;position:absolute;top:100%;right:0;}
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(1) .flag.red{height:15px;background:linear-gradient(to top, #ba440c 0%, #d17026 100%);border-top:1px solid #ba440c;}
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(1) .flag.red:before{border-left:9px solid #ba440c;border-top:3px solid #ba440c;}
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(1) .flag.red:after{border-right:9px solid #ba440c;border-top:3px solid #ba440c;}
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(1) .flag.green{height:15px;background:linear-gradient(to top, #638c30 0%, #799d2b 100%);border-top:1px solid #638c30;}
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(1) .flag.green:before{border-left:9px solid #638c30;border-top:3px solid #638c30;}
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(1) .flag.green:after{border-right:9px solid #638c30;border-top:3px solid #638c30;}
+.sidebar .fixed_block .rating_best.online_casino table td:nth-child(2){font-family: PT_Sans;font-size:.813em;color:#000000;}
+
+
+/*-----рейтинги-----*/
+.into_header_block.ratings{margin-bottom:40px;}
+.ratings_menu_wrap.ratings_page{margin-bottom:15px;}
+.main_description_ratings{margin-bottom:40px;}
+.main_description_ratings h3{margin-bottom:20px;}
+.main_description_ratings p{margin-bottom:10px;font-size:.875em;}
+.main_description_ratings p:last-child{margin-bottom:0;}
+.main_description_ratings img.img_float_left{margin-right:30px;}
+
+
+.main_description_ratings h2,
+.main_description_games h2,
+.main_description_ratings h3,
+.main_description_games h3,
+.main_description_ratings h4,
+.main_description_games h4{margin:15px 0 10px;font-size:1em;font-weight:normal;font-family: PT_Sans_Bold;}
+.main_description_ratings h2 strong,
+.main_description_games h2 strong,
+.main_description_ratings h3 strong,
+.main_description_games h3 strong,
+.main_description_ratings h4 strong,
+.main_description_games h4 strong{font-weight:normal;}
+.main_description_ratings h2 span,
+.main_description_games h2 span,
+.main_description_ratings h3 span,
+.main_description_games h3 span,
+.main_description_ratings h4 span,
+.main_description_games h4 span{font-family: PT_Sans_Bold!important;}
+
+
+/*-----рейтинги, внутренние страницы-----*/
+/*фильтры*/
+.filters_wrap{margin-bottom:60px;padding-top:15px;}
+.filters_wrap h3{margin-bottom:20px;}
+.filters_wrap .filters{text-align: justify;line-height: 0;font-size: 1px;text-align-last: justify;}
+.filters_wrap .filters:after{width: 100%;height: 0px;visibility: hidden;overflow: hidden;content: '';display: inline-block;}
+.filters_wrap .filters > li{width: auto;height:100%;display: inline-block;text-align: left;line-height: normal;vertical-align: top;}
+.filters_wrap .filters{padding:0 20px;background-color:#fff9da;border:1px solid #ecdb83;border-radius:5px;box-shadow:0 0 6px 2px rgba(0,0,0,.15);}
+.filters_wrap .filters > li{font-family: PT_Sans_Bold;font-size:18px;cursor:pointer;position:relative;padding:25px 0;}
+.filters_wrap .filters > li > span{padding-right:15px;vertical-align:middle;}
+.filters_wrap .filters > li > i{font-size:1.5em;color:#ba440c;vertical-align:middle;}
+.filters_wrap .filters > li:hover > i{transform:rotate(180deg);/*-webkit-transition-duration:.3s;transition-duration:.3s;*/}
+.filters_wrap .filters .filters_list{display:none;min-width:210px;background-color:#fff9da;border:1px solid #ecdb83;border-radius:5px;box-shadow:0 0 6px 2px rgba(0,0,0,.15);position:absolute;left:0;top:100%;z-index:15;}
+.filters_wrap .filters > li:last-child .filters_list{left:inherit;right:0;}
+.filters_wrap .filters .filters_list:before{content:"";width:100%;height:20px;background-color:#fff9da;position:absolute;bottom:100%;}
+.filters_wrap .filters .filters_list li{height:auto;border-bottom:1px solid #ecdb83;padding:8px 10px;font-family: PT_Sans;line-height:inherit;text-align-last:left;cursor:auto;}
+.filters_wrap .filters .filters_list li:last-child{border:none;}
+.filters_wrap .filters .filters_list li > span{display:inline-block;vertical-align:middle;}
+.filters_wrap .filters .filters_list li .checkbox{width:17px;height:17px;background-color:#ffffff;border:1px solid #c7b03b;margin-right:15px;cursor:pointer;position:relative;}
+.filters_wrap .filters .filters_list li .checkbox i{display:none;font-size:.875em;color:#638c30;position:absolute;left:0;top:0;}
+.filters_wrap .filters .filters_list li .checkbox.active i{display:block;}
+.filters_wrap .filters .filters_list li span:last-child{width:80%;}
+
+
+/*стили для таблиц с рейтингами на внутренних страницах*/
+.rating_table_wrap.internal_ratings_table .rating_table{margin-bottom:30px;}
+.rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="1"]{width:5%;position:relative;}
+.rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="2"]{width:15%;}
+.rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="3"]{width:24%;}
+.rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="4"]{width:30%;}
+.rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="5"]{width:8%;}
+.rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="6"]{width:10%;}
+.rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table] .crown_first,
+.rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table] .crown,
+.rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table] .first_bonus,
+.rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table] .second_bonus,
+.rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table] .first_mobile_casino,
+.rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table] .second_mobile_casino{display:none;}
+.rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table="2"] div{margin:0;box-shadow:none;}
+.rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table="5"] ul li span{display:inline-block;min-height:60px;}
+
+.rating_table_wrap .rating_table .body_table div[data-rating_table="1"] .country_img{display:none;}
+/*таблица с рейтингами казино, по странам*/
+/*.rating_table_wrap.country_table .rating_table .body_table div[data-rating_table="1"]:before{content:url(../img/rating_table_country_corner_1.png);position:absolute;bottom:-2px;left:0;}*/
+.rating_table_wrap.country_table .rating_table .body_table div[data-rating_table="1"] .country_img{display:block;width:40px;height:40px;border:1px solid #ebe189;border-radius:20px;background-color:#ffffff;text-align:center;line-height:46px;position:absolute;bottom:8px;right:8px;overflow:hidden;}
+
+/*таблица с рейтингами казино, по софту*/
+.rating_table_wrap.soft_table .rating_table .body_table[data-row_rating_table] div[data-rating_table="1"]:before{content:url(../img/rating_table_soft_corner_2.png);position:absolute;bottom:-2px;left:0;}
+.rating_table_wrap.soft_table .rating_table .body_table[data-row_rating_table="1"] div[data-rating_table="1"]:before{content:url(../img/rating_table_soft_corner_1.png);position:absolute;bottom:-2px;left:0;}
+
+/*таблица с рейтингами казино, по валютам*/
+.rating_table_wrap.money_table .rating_table .body_table div[data-rating_table="2"] div{position:relative;}
+.rating_table_wrap.money_table .rating_table .body_table div[data-rating_table="2"] div:before{content:url(../img/rating_table_money_corner_1.svg);width:37px;height:37px;position:absolute;bottom:10%;right:20%;}
+
+/*таблица с рейтингами казино, по играм*/
+.rating_table_wrap.games_table .rating_table .body_table[data-row_rating_table] div[data-rating_table="1"]:before{content:url(../img/rating_table_games_corner_2.png);position:absolute;top:78px;left:0;}
+.rating_table_wrap.games_table .rating_table .body_table[data-row_rating_table="1"] div[data-rating_table="1"]:before{content:url(../img/rating_table_games_corner_1.png);position:absolute;top:65px;left:0;}
+
+/*таблица с рейтингами казино, по платформам*/
+.rating_table_wrap.platform_table .rating_table .body_table[data-row_rating_table] div[data-rating_table="1"]:before{content:url(../img/rating_table_platform_corner_2.png);position:absolute;bottom:-2px;left:0;}
+.rating_table_wrap.platform_table .rating_table .body_table[data-row_rating_table="1"] div[data-rating_table="1"]:before{content:url(../img/rating_table_platform_corner_1.png);position:absolute;bottom:-2px;left:0;}
+
+
+/*-----обзоры игр-----*/
+.reviews_list li{display:inline-block;width:48%;height:220px;border:1px solid #efefef;box-shadow: 0 0 6px 2px rgba(0,0,0,.15);border-radius:5px;margin-bottom:30px;vertical-align:top;}
+.reviews_list li.active,
+.reviews_list li:hover{border:1px solid #ba440c;}
+.reviews_list li:nth-child(even){float:right;}
+.reviews_list li a{display:block;height:100%;padding:20px;}
+.reviews_list li a:hover{text-decoration:none;}
+.reviews_list li .review_img_block{float:left;display:inline-block;width:165px;height:120px;margin:0 15px 5px 0;border:1px solid #ebe189;border-radius:5px;background:url(../img/review_img.jpg) no-repeat center;}
+.reviews_list li h4{color:#638c30;margin-bottom:14px;}
+.reviews_list li p{font-size:.875em;color:#000000;}
+
+/*-----обзор игры-----*/
+.into_body_block.review_game_wrap{position:relative;}
+.review_block li[data-review_block]{display:inline-block;vertical-align:top;}
+.review_block li[data-review_block="1"]{width:44.4%;margin-right:35px;}
+.review_block li[data-review_block="1"] > div{display:inline-block;width:100%;height:280px;border-radius:5px;background:url(../img/review_game_img.jpg) no-repeat center;position:relative;}
+.review_block li[data-review_block="1"] > div .flag.green{display:inline-block;width:50px;height:74px;background:linear-gradient(to top, #638c30 0%, #799d2b 100%);border-top:1px solid #638c30;text-align:center;line-height:28px;position:absolute;top:0;left:15px;}
+.review_block li[data-review_block="1"] > div .flag.green:before{content:"";border:10px solid transparent;border-left:15px solid #638c30;border-top:6px solid #638c30;position:absolute;top:100%;left:0;}
+.review_block li[data-review_block="1"] > div .flag.green:after{content:"";border:10px solid transparent;border-right:15px solid #638c30;border-top:6px solid #638c30;position:absolute;top:100%;right:0;}
+.review_block li[data-review_block="1"] > div .flag .review_game_img_mini{width:60px;height:60px;border:1px solid #ebe189;border-radius:30px;position:absolute;top:7px;left:-5px;}
+.review_block li[data-review_block="2"]{width:24%;}
+.review_block li[data-review_block="2"] p{margin-bottom:20px;font-size:.875em;line-height:1.2;}
+.review_block li[data-review_block="2"] p:last-child{margin-bottom:0;}
+.review_block li[data-review_block="3"]{width:24%;float:right;}
+.review_block li[data-review_block="3"] h4{font-size:1.125em;margin-bottom:22px;}
+.review_block li[data-review_block="3"] ul{width:100%;}
+.review_block li[data-review_block="3"] ul li{height:40px;padding-left:25px;font-size:1.125em;line-height:40px;}
+.review_block li[data-review_block="3"] ul li:nth-child(odd){background-color:#f5f5f5;}
+.review_block li[data-review_block="3"] ul li span{font-family: PT_Sans_Bold;font-size:0.778em;}
+.into_body_block.review_game_wrap .btn{position:absolute;bottom:0;left:0;width:240px;height:42px;border-radius:21px;font-size:1.125em;line-height:38px;}
+
+.block_grey_bg.review_game{margin-bottom:40px;}
+
+
+/*-----бонусы-----*/
+.into_header_block.bonus{width:75%;}
+
+.ratings_menu.bonuses li[data-ratings_menu] div span{line-height:44px;}
+.ratings_menu.bonuses li[data-ratings_menu="1"] div{background:url(../img/rating_bonus_1.png) no-repeat;background-size:cover;}
+.ratings_menu.bonuses li[data-ratings_menu="2"] div{background:url(../img/rating_bonus_2.png) no-repeat;background-size:cover;}
+.ratings_menu.bonuses li[data-ratings_menu="3"] div{background:url(../img/rating_bonus_3.png) no-repeat;background-size:cover;}
+.ratings_menu.bonuses li[data-ratings_menu="4"] div{background:url(../img/rating_bonus_4.png) no-repeat;background-size:cover;}
+.ratings_menu.bonuses li[data-ratings_menu="1"] div span img{width:26px;height:26px;position:relative;top:4px;}
+.ratings_menu.bonuses li[data-ratings_menu="2"] div span img{width:23px;height:21px;}
+.ratings_menu.bonuses li[data-ratings_menu="3"] div span img{width:16px;height:22px;}
+.ratings_menu.bonuses li[data-ratings_menu="4"] div span img{width:25px;height:20px;}
+
+.rating_table_wrap.internal_ratings_table.bonuses_table .rating_table div[data-rating_table] .first_bonus,
+.rating_table_wrap.internal_ratings_table.bonuses_table .rating_table div[data-rating_table] .second_bonus{display:block;position:absolute;top:55px;}
+.rating_table_wrap.internal_ratings_table.bonuses_table .rating_table div[data-rating_table] .first_bonus{width:62px;height:42px;left:0px;}
+.rating_table_wrap.internal_ratings_table.bonuses_table .rating_table div[data-rating_table] .second_bonus{width:54px;height:38px;left:10px;}
+.rating_table_wrap.bonuses_table .rating_table .body_table div[data-rating_table="2"] div:before{display:none;}
+
+.rating_table_wrap.games_table.narrow_table .rating_table .body_table div[data-rating_table="3"]{width:25%;}
+.rating_table_wrap.games_table.narrow_table .rating_table .body_table div[data-rating_table="4"]{width:30%;}
+.rating_table_wrap.games_table.narrow_table .rating_table .body_table div[data-rating_table="5"]{width:10%;}
+.rating_table_wrap.games_table.narrow_table .rating_table .body_table div[data-rating_table="6"]{width:15%;}
+.rating_table_wrap.games_table.narrow_table .rating_table div[data-rating_table="5"] ul li span{min-height:0;}
+
+
+/*-----NOVOLINE CASINOS-----*/
+.novoline_casinos_list{margin-bottom:30px;}
+.novoline_casinos_list li{margin-bottom:10px;padding:20px;border-radius:5px;box-shadow: 0 0 6px 2px rgba(0,0,0,.15);}
+.novoline_casinos_list li:last-child{margin-bottom:0;}
+.novoline_casinos_list li div{display:inline-block;vertical-align:top;}
+.novoline_casinos_list li div:last-child{width:75%;}
+.novoline_casinos_list li div > span{display:inline-block;width:165px;height:120px;margin-right:15px;border:1px solid #ebe189;border-radius:5px;background:url(../img/novoline_casinos_img_1.png) no-repeat left center;background-size:cover;}
+.novoline_casinos_list li div p{font-size:.875em;line-height:1.2;}
+.novoline_casinos_list li div p.date{margin-bottom:6px;color:#949494;line-height:1;}
+.novoline_casinos_list li div h4{margin-bottom:15px;font-family: PT_Sans_Bold;}
+.novoline_casinos_list li div h4,
+.novoline_casinos_list li div h4 a{color:#547e0e;}
+.novoline_casinos_list li div h4 a:hover{color:#ba440c;}
+.novoline_casinos_list li div h4 a:active{text-decoration:none;}
+
+
+/*внутренняя страница novoline casino*/
+.review_online_casino_wrap{position:relative;}
+.review_online_casino_wrap .btn.orange{width:240px;height:42px;border-radius:21px;margin-right:115px;font-family: PT_Sans;font-size:1.125em;line-height:38px;cursor:pointer;vertical-align:top;}
+
+.review_block.review_online_casino{margin-bottom:55px;}
+.review_block.review_online_casino li[data-review_block="1"] div{background:none;}
+.review_block.review_online_casino li[data-review_block="1"] .online_casino_slider_wrap{display:inline-block;width:500px;height:280px;position:relative;}
+.online_casino_slider_wrap .online_casino_slider_dotted{position:absolute;right:0;bottom:-35px;}
+.online_casino_slider img{border-radius:5px;}
+
+.review_block.review_online_casino li[data-review_block="2"]{width:25%;}
+.review_block.review_online_casino li[data-review_block="2"] p{margin-bottom:40px;font-size:1.125em;}
+.review_block.review_online_casino li[data-review_block="2"] p span{display:inline-block;padding-left:15px;font-family: PT_Sans_Bold;font-size:1.667em;color:#5f891d;}
+.license_number_wrap{display:inline-block;width:100%;background-color:#fff9da;border:1px solid #ecdb83;border-radius:5px;box-shadow:0 0 5px 0 rgba(0,0,0,.47);padding:12px 10px;margin-bottom:30px;font-size:1.125em;}
+.license_number_wrap .license_number{display:block;margin-top:10px;font-family: PT_Sans_Bold;}
+.average_score span{display:block;margin-bottom:10px;font-family: PT_Sans_Bold;font-size:.875em;}
+
+.review_block.review_online_casino li[data-review_block="3"] ul li{height:auto;padding:10px 0 10px 25px;font-size:1.125em;line-height:inherit;line-height:1.2;}
+.review_block.review_online_casino li[data-review_block="3"] ul li span{display:block;margin-bottom:10px;font-family: PT_Sans_Bold;font-size:0.778em;line-height:1;}
+
+.review_online_casino_wrap .pay_system_block{width:52.2%;padding:15px 25px;margin-top:-15px;background-color:#fafafa;border:1px solid #e5e5e5;display:inline-block;vertical-align:top;float:right;}
+.review_online_casino_wrap .pay_system_block ul li{display:inline-block;vertical-align:top;}
+.review_online_casino_wrap .pay_system_block ul li:first-child{width:55%;}
+.review_online_casino_wrap .pay_system_block ul li:last-child{width:43%;}
+.review_online_casino_wrap .pay_system_block  h4{margin-bottom:8px;}
+.review_online_casino_wrap .pay_system_block .pay_systems_link{width:85%;}
+.review_online_casino_wrap .pay_system_block .pay_systems_link img{width:40px;height:20px;margin:0 3px 4px 0;}
+.review_online_casino_wrap .pay_system_block .platform_link i{font-size:2em;margin-right:25px;}
+.review_online_casino_wrap .pay_system_block .platform_link i.fa-android{color:#a4ca39;}
+.review_online_casino_wrap .pay_system_block .platform_link img{width:auto;height:32px;position:relative;top:5px;}
+
+.welcome_bonus{display:inline-block;vertical-align:top;}
+.welcome_bonus h4{font-size:.875em;margin-bottom:8px;}
+.welcome_bonus div{font-family: PT_Sans_Bold;font-size:2.250em;color:#fe8300;}
+.welcome_bonus div span{display:inline-block;padding-left:5px;font-family: PT_Sans;}
+
+.descriptiopn_online_casino{width:100%;margin-bottom:40px;}
+.descriptiopn_online_casino p{margin-bottom:10px;font-size:.875em;}
+.descriptiopn_online_casino p:last-child{margin-bottom:0;}
+
+.rating_table_wrap.rating_popular_games .rating_table .body_table div[data-rating_table] > div{min-height:125px;}
+.rating_table_wrap.rating_popular_games .rating_table .body_table div[data-rating_table="1"]{width:7%;}
+.rating_table_wrap.rating_popular_games .rating_table .body_table div[data-rating_table="2"]{width:18%;}
+.rating_table_wrap.rating_popular_games .rating_table .body_table div[data-rating_table="2"] div{text-align:left;}
+.rating_table_wrap.rating_popular_games .rating_table .body_table div[data-rating_table="3"]{width:15%;font-family: PT_Sans_Bold;font-size:1.875em;}
+.rating_table_wrap.rating_popular_games .rating_table .body_table div[data-rating_table="4"]{width:30%;}
+.rating_table_wrap.rating_popular_games .rating_table .body_table div[data-rating_table="5"]{width:15%;}
+.rating_table_wrap.rating_popular_games .rating_table .body_table div[data-rating_table="6"]{width:15%;}
+.rating_table_wrap.rating_popular_games .rating_table div[data-rating_table="4"] ul li{width:24%;}
+.rating_table_wrap.rating_popular_games .rating_table div[data-rating_table="4"] ul li div.icon_block{display:inline-block;width:60px;height:43px;overflow:hidden;vertical-align:middle;margin-bottom:15px;}
+.rating_table_wrap.rating_popular_games .rating_table div[data-rating_table="4"] li[data-functionality="1"] div.icon_block img{width:58px;height:42px;}
+.rating_table_wrap.rating_popular_games .rating_table div[data-rating_table="4"] li[data-functionality="2"] div.icon_block img{width:42px;height:42px;}
+.rating_table_wrap.rating_popular_games .rating_table div[data-rating_table="4"] li[data-functionality="3"] div.icon_block img{width:58px;height:30px;position:relative;top:6px;}
+.rating_table_wrap.rating_popular_games .rating_table div[data-rating_table="4"] li[data-functionality="4"] div.icon_block img{width:42px;height:42px;}
+
+.btn.orange.play_game{width:240px;height:42px;margin-bottom:50px;border-radius:21px;font-family: PT_Sans;font-size:1.125em;line-height:38px;cursor:pointer;}
+
+.review_form{width:76.5%;min-height:230px;padding:25px 15px;margin-bottom:40px;background-color:#f5f5f5;box-shadow:0 0 6px 2px rgba(0,0,0,.15);border-radius:5px;}
+.review_form h3{margin-bottom:15px;}
+.review_form .input_block{display:inline-block;width:46.5%;}
+.review_form input,
+.review_form textarea{border:1px solid #f5f5f5;border-radius:5px;box-shadow:inset 0 0 5px 0 rgba(0,0,0,.27);font-size:.875em;}
+.review_form input{width:92.7%;height:43px;padding:0 15px;margin-bottom:20px;line-height:43px;}
+.review_form input:nth-child(2){margin-bottom:15px;}
+.review_form textarea{float:right;width:440px;height:143px;padding:15px;resize:none;}
+.review_form .error{border:1px solid #ff0000;}
+.review_form .user_rating_wrap{margin-bottom:40px;}
+.review_form .user_rating_wrap span{display: table-cell;vertical-align:middle;}
+.review_form .user_rating_wrap span:first-child{padding-right:10px;font-size:.875em;}
+.review_form .user_rating_wrap span img{vertical-align:middle;}
+.review_form .btn{width:240px;height:42px;background-color:transparent;border-radius:21px;font-family: PT_Sans;font-size:1.125em;line-height:38px;cursor:pointer;}
+
+/*-----бесплатные игры-----*/
+.ratings_menu.free_games li[data-ratings_menu] div{text-align:center;}
+.ratings_menu.free_games li[data-ratings_menu] div + span{display:inline-block;font-family: PT_Sans_Bold;color:#000000;text-decoration:none;position:relative;top:20px;}
+.ratings_menu.free_games li[data-ratings_menu] div a{display:none;position:relative;z-index:1;}
+.ratings_menu.free_games li[data-ratings_menu]:hover div a{display:inline-block;}
+.ratings_menu.free_games .btn.green{width:140px;height:36px;margin:40px 0 15px;border-radius:18px;font-size:1.125em;line-height:32px;}
+.ratings_menu.free_games .read_more{font-family: PT_Sans_Bold;font-size:1.125em;color:#ffffff;}
+
+/*бесплатные слоты*/
+.ratings_menu.free_slots li[data-ratings_menu="1"] div{background:url(../img/rating_free_slot_1.png) no-repeat;background-size:cover;}
+.ratings_menu.free_slots li[data-ratings_menu="2"] div{background:url(../img/rating_free_slot_2.png) no-repeat;background-size:cover;}
+.ratings_menu.free_slots li[data-ratings_menu="3"] div{background:url(../img/rating_free_slot_3.png) no-repeat;background-size:cover;}
+.ratings_menu.free_slots li[data-ratings_menu="4"] div{background:url(../img/rating_free_slot_4.png) no-repeat;background-size:cover;}
+
+/*бесплатная рулетка*/
+.ratings_menu.free_roulette li[data-ratings_menu="1"] div{background:url(../img/rating_free_slot_1.png) no-repeat;background-size:cover;}
+.ratings_menu.free_roulette li[data-ratings_menu="2"] div{background:url(../img/rating_free_slot_2.png) no-repeat;background-size:cover;}
+.ratings_menu.free_roulette li[data-ratings_menu="3"] div{background:url(../img/rating_free_slot_3.png) no-repeat;background-size:cover;}
+.ratings_menu.free_roulette li[data-ratings_menu="4"] div{background:url(../img/rating_free_slot_4.png) no-repeat;background-size:cover;}
+
+/*бесплатный блэк джек*/
+.ratings_menu.free_black_jack li[data-ratings_menu="1"] div{background:url(../img/rating_free_slot_1.png) no-repeat;background-size:cover;}
+.ratings_menu.free_black_jack li[data-ratings_menu="2"] div{background:url(../img/rating_free_slot_2.png) no-repeat;background-size:cover;}
+.ratings_menu.free_black_jack li[data-ratings_menu="3"] div{background:url(../img/rating_free_slot_3.png) no-repeat;background-size:cover;}
+.ratings_menu.free_black_jack li[data-ratings_menu="4"] div{background:url(../img/rating_free_slot_4.png) no-repeat;background-size:cover;}
+
+/*бесплатный покер*/
+.ratings_menu.free_poker li[data-ratings_menu="1"] div{background:url(../img/rating_free_slot_1.png) no-repeat;background-size:cover;}
+.ratings_menu.free_poker li[data-ratings_menu="2"] div{background:url(../img/rating_free_slot_2.png) no-repeat;background-size:cover;}
+.ratings_menu.free_poker li[data-ratings_menu="3"] div{background:url(../img/rating_free_slot_3.png) no-repeat;background-size:cover;}
+.ratings_menu.free_poker li[data-ratings_menu="4"] div{background:url(../img/rating_free_slot_4.png) no-repeat;background-size:cover;}
+
+/*внутренняя бесплатные игры*/
+.review_block.free_game li[data-review_block="1"]{width:100%;margin-right:0;}
+.review_block.free_game li[data-review_block="1"] div.free_game_img_block{float:left;width:45%;height:280px;}
+.review_block.free_game li[data-review_block="1"] div.free_game_img_block span{display:block;height:100%;background:url(../img/free_game_img.jpg) no-repeat center;}
+.review_block.free_game li[data-review_block="1"] div.free_game_desc{background:none;display:inline-block;width:52%;height:auto;margin-left:3%;}
+.review_block.free_game li[data-review_block="1"] div.read_all_text{background:none;display:none;}
+/*.review_block.free_game li[data-review_block="2"]{width:52%;}*/
+
+.free_game_slider_wrap{width:1132px;padding:10px 30px 0;margin:0 0 50px;position:relative;}
+.free_game_slider_wrap .free_game_slider{text-align:center;z-index:2;}
+.free_game_slider_wrap .free_game_slider .slick-slide{text-align:center;}
+.free_game_slider_wrap .free_game_slider .slick-slide[data-free_game_slide]{height:150px;border-radius:6px;background-size:90% 100%;}
+.free_game_slider_wrap .free_game_slider div[data-free_game_slide] .slide_img_block{width:90%;height:100%;margin:0 auto;}
+.free_game_slider_wrap .free_game_slider div[data-free_game_slide="1"] .slide_img_block{background:url(../img/free_game_slide_1.png) no-repeat center;}
+.free_game_slider_wrap .free_game_slider div[data-free_game_slide="2"] .slide_img_block{background:url(../img/free_game_slide_2.png) no-repeat center;}
+.free_game_slider_wrap .free_game_slider div[data-free_game_slide="3"] .slide_img_block{background:url(../img/free_game_slide_3.png) no-repeat center;}
+.free_game_slider_wrap .free_game_slider div[data-free_game_slide="4"] .slide_img_block{background:url(../img/free_game_slide_4.png) no-repeat center;}
+.free_game_slider_wrap .free_game_slider div[data-free_game_slide="5"] .slide_img_block{background:url(../img/free_game_slide_5.png) no-repeat center;}
+.free_game_slider_wrap .free_game_slider div[data-free_game_slide="6"] .slide_img_block{background:url(../img/free_game_slide_6.png) no-repeat center;}
+.free_game_slider_wrap .free_game_slider div[data-free_game_slide="7"] .slide_img_block{background:url(../img/free_game_slide_7.png) no-repeat center;}
+.free_game_slider_wrap .free_game_slider div[data-free_game_slide="8"] .slide_img_block{background:url(../img/free_game_slide_8.png) no-repeat center;}
+.free_game_slider_wrap .free_game_slider .slick-slide .slide_img_block div{display:none;width:100%;height:100%;border-radius:6px;position:relative;overflow:hidden;}
+.free_game_slider_wrap .free_game_slider .slick-slide:hover .slide_img_block div{display:inline-block;text-align:center;}
+.free_game_slider_wrap .free_game_slider .slick-slide:hover .slide_img_block div:before{content:"";position:absolute;top:0;left:0;z-index:1;display:block;width:100%;height:100%;background-color:rgba(186,68,12,.6);border-radius:6px;}
+.free_game_slider_wrap .free_game_slider .slick-slide:hover .slide_img_block div a{position:relative;z-index:2;}
+.free_game_slider_wrap .free_game_slider .slick-slide:hover .slide_img_block div .btn.green{width:140px;height:36px;margin:40px 0 15px;border-radius:18px;font-size:1.125em;line-height:32px;}
+.free_game_slider_wrap .free_game_slider .slick-slide:hover .slide_img_block div .read_more{font-family: PT_Sans_Bold;font-size:1.125em;color:#ffffff;}
+.free_game_slider_wrap .arrow_block{position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;}
+.free_game_slider_wrap .arrow_block .slick-arrow{position:absolute;top:50%;bottom:inherit;}
+
+.block_grey_bg.free_game{margin-bottom:40px;}
+.block_grey_bg.free_game p{font-size:.875em;}
+
+
+/*-----карта сайта-----*/
+.site_map h4{padding-left:24px;margin-bottom:25px;position:relative;}
+.site_map h4 a{font-family: PT_Sans_Bold;font-size:1.125em;color:#000000;}
+.site_map h4:before {content: url(../img/bubi.svg);width:15px;height:20px;position:absolute;left:0;}
+.site_map .main_list{padding-left:30px;}
+.site_map .main_list > li{margin-bottom:15px;font-size:1.125em;}
+.site_map .main_list > li:last-child{margin-bottom:0;}
+.site_map .main_list > li a{display:inline-block;margin-bottom:5px;color:#000000;position:relative;}
+.site_map .main_list > li > a{margin-bottom:7px;padding-left:30px;}
+.site_map .main_list > li > a:before{content: url(../img/clubs.svg);width:17px;height:17px;position:absolute;left:0;}
+.site_map .internal_list{padding-left:70px;}
+.site_map .internal_list li{margin-bottom:3px;}
+.site_map .internal_list li:last-child{margin-bottom:0;}
+.site_map .internal_list li a{font-size:.778em;color:#638c30;}
+.site_map .internal_list li a:hover,
+.site_map .internal_list li a:active{color:#ba440c;}
+.site_map .internal_list li a:active{text-decoration:none;}
+
+
+/*-----ошибка 404-----*/
+.error_404{text-align:center;}
+.error_404 div{display:inline-block;margin-bottom:60px;}
+.error_404 div img{width:315px;height:295px;}
+.error_404 p{margin-bottom:25px;font-family: PT_Sans_Bold;font-size:1.125em;}
+.error_404 .btn{width:200px;margin-bottom:40px;font-family: PT_Sans;font-size:1.125em;}
+.error_404 .btn.white{margin-right:35px;}
+.error_404 .btn.orange{margin-left:35px;}
+
+
+/*-----ПРАВЫЙ БЛОК-----*/
+.sidebar{position:relative;}
+.sidebar .fixed_block{position:absolute;top:0;right:0;width:100%;padding-left:35px;}
+.sidebar.fixed .fixed_block{position:static;}
+.sidebar .fixed_block .banner_right{display:inline-block;margin-bottom:45px;}
+/*.sidebar .fixed_block .banner_right img{width:230px;height:auto;}*/
+.sidebar .fixed_block .rating_best{padding-bottom:45px;}
+.sidebar .fixed_block .rating_best h3{margin-bottom:25px;}
+.sidebar .fixed_block .rating_best table{width:100%;border-collapse:collapse;margin-bottom:50px;}
+.sidebar .fixed_block .rating_best table td{width:33%;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;padding:15px 0;vertical-align:middle;text-align:center;}
+.sidebar .fixed_block .rating_best table td img{max-width:90%;}
+.sidebar .fixed_block .rating_best table td:nth-child(2){font-family: PT_Sans_Bold;font-size:.875em;color:#638c30;}
+.sidebar .fixed_block .rating_best table .btn.orange{width:70px;height:25px;line-height:21px;font-size:.875em;}
+
+/*стили для слайдера*/
+.top_slider_wrap{position:relative;}
+.sidebar.fixed .top_slider_wrap{width:236px;}
+.top_slider_dotted{position:absolute;right:25px;bottom:20px;}
+.slick-dotted.slick-slider{margin-bottom:0;}
+.slick-dots{position:static;}
+.slick-dots li{margin:0;}
+.slick-dots li button:before{border:1px solid #808080;background-color:transparent;}
+.slick-dots li.slick-active button:before{background-color:#808080;}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before{background-color:#808080;}
+
+
+/*ФУТЕР*/
+.helper_footer{width:100%;margin:0;padding-bottom:405px;}
+footer{width:100%;height:405px;position:absolute;bottom:0;left:0;}
+
+.main_footer{height:360px;padding:20px 35px 0;background-color:#eaeaea;position:relative;}
+.main_footer div[data-footer_menu_item]{float:left;width:25%;}
+.main_footer div[data-footer_menu_item] h4{margin-bottom:10px;position:relative;}
+.main_footer div[data-footer_menu_item] h4 img{display:inline-block;vertical-align:top;margin-right:10px;}
+.main_footer div[data-footer_menu_item="1"] h4 img{width:24px;height:34px;}
+.main_footer div[data-footer_menu_item="2"] h4 img{width:32px;height:32px;}
+.main_footer div[data-footer_menu_item="3"] h4 img{width:39px;height:33px;}
+.main_footer div[data-footer_menu_item="4"] h4 img{width:32px;height:34px;}
+.main_footer div[data-footer_menu_item] h4 a{display:inline-block;vertical-align:top;width:130px;height:100%;padding-bottom:15px;border-bottom:1px solid #000000;color:#000000;}
+.main_footer div[data-footer_menu_item] h4 a:hover{text-decoration:none;}
+.main_footer div[data-footer_menu_item] ul li{margin-bottom:8px;padding-left:20px;position:relative;}
+.main_footer div[data-footer_menu_item] ul li:last-child{margin-bottom:0;}
+.main_footer div[data-footer_menu_item] ul li:before{position:absolute;left:0;}
+.main_footer div[data-footer_menu_item="1"] ul li:before{content:url(../img/bubi.svg);width:6px;height:8px;}
+.main_footer div[data-footer_menu_item="2"] ul li:before{content:url(../img/clubs.svg);width:8px;height:8px;}
+.main_footer div[data-footer_menu_item="3"] ul li:before{content:url(../img/worms.svg);width:9px;height:7px;}
+.main_footer div[data-footer_menu_item="4"] ul li:before{content:url(../img/pike.svg);width:7px;height:7px;}
+.main_footer div[data-footer_menu_item] ul li a{font-size:.875em;color:#638c30;}
+.main_footer div[data-footer_menu_item] ul li a:hover{color:#ba440c;}
+.main_footer div[data-footer_menu_item] ul li a:active{color:#ba440c;text-decoration:none;}
+
+.main_footer .write_us{position:absolute;left:35px;bottom:15px;z-index:2;}
+.main_footer .write_us h4{font-size:.875em;}
+.main_footer .write_us a{font-size:.875em;color:#638c30;}
+.main_footer .write_us a:hover{color:#ba440c;}
+
+.main_footer .social{position:absolute;right:32px;bottom:12px;z-index:2;}
+.main_footer .social h4{font-size:.875em;margin-right:35px;}
+.main_footer .social h4,
+.main_footer .social span{display:inline-block;padding:3px;border-radius:20px;background-color:transparent;}
+.main_footer .social span:hover{background-color:#ffffff;}
+.main_footer .social a{display:inline-block;vertical-align:middle;}
+.main_footer .social a{width:34px;height:34px;border-radius:17px;text-align:center;line-height:34px;color:#ffffff;margin-right:5px;}
+.main_footer .social a:last-child{margin-right:0;}
+.main_footer .social .google{background-color:#dc4335;}
+.main_footer .social .twitter{background-color:#339dc3;}
+.main_footer .social .facebook{background-color:#314a7e;}
+
+.copy_footer{height:45px;background-color:#ffffff;line-height:45px;position:relative;padding:0 35px;}
+.copy_footer .copy{font-size:.875em;color:#818181;position:relative;z-index:2;}
+.main_block .copy_footer .main_logo{top:inherit;bottom:0;}
+.copy_footer .site_map{display:inline-block;height:100%;font-size:.75em;color:#638c30;line-height:45px;float:right;position:relative;z-index:2;text-decoration:none;}
+.copy_footer .site_map i,
+.copy_footer .site_map span{vertical-align:middle;}
+.copy_footer .site_map span{text-decoration:underline;}
+.copy_footer .site_map span:hover{color:#ba440c;}
+.copy_footer .site_map i{font-size:1.333em;}
+.copy_footer .site_map:hover i{color:#ba440c;}
+
+
+/*-----стили для fancybox-----*/
+#fancybox-overlay{opacity:.9!important;}
+#fancybox-wrap{width:auto!important;border:none;}
+#fancybox-close{top:-35px;right:-35px;}
+#fancybox-left{left:-55px;}
+/*#fancybox-right{right:-80px;}*/
+#fancybox-right{left:100%;margin-left:25px;}
+#fancybox-left:hover span{left:-2px;}
+#fancybox-right:hover span{left:2px;}
+#fancybox-left-ico,
+#fancybox-right-ico{left:0;}
+/*-----END, стили для fancybox-----*/
+
+
+.block_grey_bg .full_text p{font-size:16px;display:block;margin-bottom:10px;}/*.875em - 1em*/
+.block_grey_bg .full_text p:last-child{margin-bottom:0;}
+
+.full_text ul{list-style:square;margin-bottom:10px;padding-left:20px;}
+.full_text ul li{margin-bottom:10px;}
+.full_text ul li:last-child{margin-bottom:0;}
+
+.review_block li span,
+.full_text p span{font-family: PT_Sans!important;}
+.review_block li span{font-size:14px;}
+.welcome_bonus div span{font-size:1em;}
+
+.into_header_block ul{list-style:square;margin-bottom:10px;padding-left:20px;clear:both;}
+.into_header_block ul li{margin-bottom:10px;}
+.into_header_block ul li:last-child{margin-bottom:0;}
+
+/*стили для блоков с текстом, который сокращается в мобильной версии*/
+.mobile_short_text .full_text{font-size: 14px; color: #000;}/*.875em - 1em*/
+.mobile_short_text .full_text p{display:block;margin-bottom:10px;font-size:14px;line-height: 1.2;}
+.mobile_short_text .full_text p:last-child{margin-bottom:0;}
+
+
+/*внутренние страницы рейтингов*/
+.rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table="5"].show_mobile_cols{display:none;}
+
+/*блоки с текстом*/
+.block_grey_bg.review_game{font-size:1em;}/*.875em - 1em*/
+.block_grey_bg.review_game .full_text{font-size:1em;}
+
+
+/*правки от 23.12.2016*/
+.into_header_block p{font-size:1em;}
+
+.how_make_rating h2,
+.main_description_ratings h2,
+.main_description_games h2{font-size:1.875em;}
+
+.main_description_ratings h2 span,
+.main_description_games h2 span{font-family: PT_Sans_Bold!important;font-size:1em!important;}
+
+.how_make_rating h3,
+.main_description_ratings h3,
+.main_description_games h3,
+.how_make_rating h4,
+.main_description_ratings h4,
+.main_description_games h4,
+.main_description_ratings p strong,
+.main_description_games p strong,
+.main_description_ratings strong,
+.main_description_games strong,
+.free_game p strong,
+.free_game p b{font-size:1.250em;font-family: PT_Sans_Bold!important;}
+.free_game p b{display:block;margin-bottom:10px;}
+
+.how_make_rating h3 span,
+.main_description_ratings h3 span,
+.main_description_games h3 span,
+.main_description_ratings h4 span{font-family: PT_Sans_Bold!important;font-size:1em!important;}
+
+.main_description_games p{font-size:1em;}
+
+.reviews_list li p{font-size:1em;}
+.reviews_list li p span{font-family: PT_Sans!important;font-size:1em!important;}
+
+.novoline_casinos_list li div p{font-size:1em;}
+.novoline_casinos_list li div p span{font-family: PT_Sans!important;font-size:1em!important;}
+.novoline_casinos_list li div > span{background-size: cover!important;}
+
+.review_block li[data-review_block="2"] p{font-size:1em;}
+.review_block li[data-review_block="2"] p span{font-family: PT_Sans!important;font-size:1em!important;}
+
+.mobile_short_text .full_text h3{font-size:1.250em;font-family: PT_Sans_Bold!important;margin-bottom:10px;}
+.mobile_short_text .full_text p span{font-family: PT_Sans!important;font-size:1em!important;}
+
+.show_description span,
+.collapse_block span{display:none!important;}
+
+.rating_table_wrap .rating_table div[data-rating_table="3"] ul{list-style:square;margin-bottom:10px;padding-left:20px;}
+.rating_table_wrap .rating_table div[data-rating_table="3"] ul li{margin-bottom:10px;}
+.rating_table_wrap .rating_table div[data-rating_table="3"] ul li:last-child{margin-bottom:0;}
+
+.rating_table_wrap.rating_novoline_games .rating_table div[data-rating_table="3"] ul{list-style:none;padding-left:0;}
+
+.img_full_center{margin-bottom:20px;text-align:center;}
+
+
+/*блоки скрытые в десктопной версии*/
+.top_menu_mobile,
+.menu_list_wrap,
+.main_footer div[data-footer_menu_item] h4 i,
+.bread_crumbs.mobile,
+.collapse_block,
+.leaders_top_five ul li .show_description,
+.mobile_action_block,
+.read_all_text,
+.reviews_games_wrap .btn.mobile,
+.review_block li[data-review_block="3"] h4 i,
+.ratings_menu.free_games li[data-ratings_menu] a.btn.white,
+.ratings_menu.free_games li[data-ratings_menu] a.btn.orange,
+.free_game_slider a.btn.white,
+.free_game_slider a.btn.orange
+.review_block.review_novoline_casino li[data-review_block="2"] .welcome_bonus,
+.review_block.review_novoline_casino li[data-review_block="2"] .novoline_casino_play,
+.rating_table_wrap.rating_novoline_games .rating_table .body_table div[data-rating_table="3"] ul{display:none;}
+
+/*мобильная версия 360px*/
+@media only screen and (max-width: 1000px){/*360px*/
+    body{min-width:100%;}
+    .top_bg{display:none;}
+    .main_block{width:100%;margin:0;padding:0;border-radius:0;box-shadow:inherit;}
+    .main_block .main_logo,
+    .content_wrap .container .row .cols.col-right.sidebar{display:none;}
+    h2{font-size:1.875em;}
+    h3{font-size:1.5em;}
+    .read_all_text{display:block;padding-top:10px;}
+
+    .img_float_right,
+    .img_float_left{float:none;width:100%;}
+    .img_float_right{margin-left:0;}
+    .img_float_left{margin-right:0;}
+
+    .add_bg_body{overflow:hidden;}
+
+    .menu_list_wrap{position:absolute;top:0;right:-100%;z-index:100;display:block;width:100%;height:100%;background-color:rgba(0,0,0,.63);}
+    .menu_list_wrap .menu_list{width:82%;height:auto;background-color:#ffffff;float:right;padding-top:14px;position:relative;}
+    .menu_list_wrap .menu_list > a{display:inline-block;text-transform:uppercase;font-family:PT_Serif_Bold;font-size:1.250em;color:#638c30;text-shadow:0 0 2px #dfd49e, 0 1px 2px rgba(0,0,0,.3);margin:0 5%;}
+    .menu_list_wrap .menu_list > a span{display:block;font-size:1.700em;}
+    .menu_list_wrap .menu_list .close_menu{display:inline-block;width:50px;height:50px;background-color:#ba440c;border-radius:25px;font-size:4em;color:#ffffff;text-align:center;line-height:48px;cursor:pointer;position: absolute;right: 20px;top: 15px;}
+    .menu_list_wrap .menu_list ul[data-menu_list="1"]{margin-top:15px;}
+    .menu_list_wrap .menu_list ul[data-menu_list="1"] li{height:48px;background-color:#eeeeee;border-bottom:1px solid #98b060;}
+    .menu_list_wrap .menu_list ul[data-menu_list="1"] li a{position:relative;display:block;height:100%;padding-left:72px;font-size:1.375em;color:#000000;line-height:48px;text-decoration:none;}
+    .menu_list_wrap .menu_list ul[data-menu_list="1"] li a span{display:inline-block;width:48px;height:100%;background-color:#678c0e;text-align:center;line-height:48px;position:absolute;top:0;left:0;}
+    .menu_list_wrap .menu_list ul[data-menu_list="1"] li[data-menu_list_point="1"] span img{width:21px;height:19px;}
+    .menu_list_wrap .menu_list ul[data-menu_list="1"] li[data-menu_list_point="2"] span img{width:21px;height:22px;}
+    .menu_list_wrap .menu_list ul[data-menu_list="1"] li[data-menu_list_point="3"] span img{width:20px;height:20px;}
+    .menu_list_wrap .menu_list ul[data-menu_list="1"] li[data-menu_list_point="4"] span img{width:32px;height:18px;}
+
+    .menu_list_wrap .menu_list ul[data-menu_list="2"] > li{height:auto;border-bottom:1px solid #949494;}
+    .menu_list_wrap .menu_list ul[data-menu_list="2"] li div{height:60px;padding-left:72px;cursor:pointer;font-size:1.125em;line-height:60px;position:relative;}
+    .menu_list_wrap .menu_list ul[data-menu_list="2"] li div.show_list .free_link i{transform:rotate(180deg);transition-duration:.3s;}
+    .menu_list_wrap .menu_list ul[data-menu_list="2"] li div a{display:block;height:100%;color:#000000;text-decoration:none;line-height:60px;}
+    .menu_list_wrap .menu_list ul[data-menu_list="2"] li div .free_link{display:inline-block;width:22px;height:22px;background-color:#ba440c;border-radius:11px;text-align:center;line-height:22px;position:absolute;left:12px;top:19px;}
+    .menu_list_wrap .menu_list ul[data-menu_list="2"] li div .free_link i{font-size:1.25em;color:#ffffff;position:relative;top:0;transition-duration:.3s;}
+    .menu_list_wrap .menu_list ul[data-menu_list="2"] li ul{display:none;margin:10px 0 30px;padding-left:72px;}
+    .menu_list_wrap .menu_list ul[data-menu_list="2"] li ul li{margin-bottom:15px;}
+    .menu_list_wrap .menu_list ul[data-menu_list="2"] li ul li a{color:#638c30;text-decoration:none;}
+
+
+    header{margin-bottom:25px;}
+    header .top_menu{display:none;}
+    header .action_block,
+    header .image_menu{display:none;}
+    header .mobile_action_block{display:block;width:100%;height:355px;margin-bottom:20px;background-color:#001955;position:relative;}
+    header .mobile_action_block .add_bg_action_block{height:100%;background: url(../img/mobile_action_bg.jpg) no-repeat center;text-align: center;position:relative;box-shadow:inset 0 -150px 100px -28px rgba(0,15,50,1);}
+    header .mobile_action_block .add_bg_action_block .float_block{position:absolute;bottom:15px;width:100%;}
+    header .mobile_action_block .add_bg_action_block h2{margin-bottom:15px;font-size:1.625em;color:#ffffff;}
+    header .mobile_action_block .add_bg_action_block .btn{width:290px;height:50px;border-radius:25px;line-height:46px;font-family:PT_Sans_Bold;font-size:1.5em;}
+    header .top_menu_mobile{display:block;height:80px;padding:14px 5%;border-bottom:1px solid #e8e8e8;box-shadow:0 0 3px 2px rgba(0,0,0,.1);position:relative;}
+    header .top_menu_mobile a{display:inline-block;text-transform:uppercase;font-family:PT_Serif_Bold;font-size:1.250em;color:#638c30;text-shadow:0 0 2px #dfd49e, 0 1px 2px rgba(0,0,0,.3);}
+    header .top_menu_mobile a span{display:block;font-size:1.700em;}
+    header .top_menu_mobile a:hover{text-decoration:none;}
+    header .top_menu_mobile .open_menu{display:inline-block;width:50px;height:50px;background-color:#ba440c;border-radius:25px;text-align:center;line-height:55px;cursor:pointer;position: absolute;right: 20px;top: 15px;}
+    header .top_menu_mobile .open_menu i{font-size:1.5em;color:#ffffff;}
+    
+    .main_description_ratings img{width:100%!important;height:auto!important;}
+
+    /*хлебные крошки*/
+    .bread_crumbs{display:none;}
+    .bread_crumbs.mobile{display:block;}
+    .bread_crumbs.mobile span{color:#000000;}
+    .bread_crumbs.mobile a{color:#638c30;text-decoration:underline;}
+
+    .content_wrap{padding:0 5%;}
+    .content_wrap .container,
+    .content_wrap .container .row,
+    .content_wrap .container .row .cols{display:block;width:100%;}
+
+    .how_make_rating img{width:100%;}
+    .mobile_short_text .full_text h2,
+    .mobile_short_text .full_text h3,
+    .mobile_short_text .full_text h4{display:none;}
+    .mobile_short_text .full_text p{display:inline-block;margin-bottom:10px;}
+    .mobile_short_text .full_text p:last-child{margin-bottom:0;}
+
+    .leaders_top_five ul li img{width:auto;}
+
+    /*таблицы с рейтингами*/
+    .rating_table_wrap .rating_table div[data-rating_table="2"] div{margin: -20px 0 -10px;}
+
+    .content_wrap .container .row.header_table{display:none;}
+    .rating_table_wrap .rating_table .body_table .cols{display:inline-block;min-height:inherit;padding-left:0;}
+    .rating_table_wrap .rating_table .body_table div[data-rating_table="1"]{width:16%;}
+    .rating_table_wrap .rating_table .body_table div[data-rating_table="2"]{width:42%;padding:40px 0 20px;}
+    .rating_table_wrap .rating_table .body_table div[data-rating_table="3"]{width:100%;padding-right:5px;}
+    .rating_table_wrap .rating_table .body_table div[data-rating_table="4"]{width:70%;padding-top:15px;display:none;}
+    .rating_table_wrap .rating_table .body_table div[data-rating_table="5"]{width:28%;padding-top:15px;display:none;}
+    .rating_table_wrap .rating_table .body_table div[data-rating_table="6"]{width:100%;padding:20px 5%;text-align:right;}
+    .rating_table_wrap .rating_table .body_table div[data-rating_table="6"] div,
+    .rating_table_wrap .rating_table .body_table div[data-rating_table="6"] a{vertical-align:middle;}
+    .rating_table_wrap .rating_table .body_table div[data-rating_table] .btn.white{margin-bottom:0;}
+    .rating_table_wrap .rating_table  div[data-rating_table] .btn.white{width:32.6%;}
+    .rating_table_wrap .rating_table  div[data-rating_table] .btn.orange{width:37.6%;}
+    .rating_table_wrap .rating_table .first_row div[data-rating_table="4"]{display:inline-block;}
+    .rating_table_wrap .rating_table .first_row div[data-rating_table="5"]{display:inline-block;}
+    .rating_table_wrap .rating_table .first_row div[data-rating_table="6"]{text-align:left;}
+    .rating_table_wrap .rating_table .first_row div[data-rating_table] .btn.white{width:38%;}
+    .rating_table_wrap .rating_table .first_row div[data-rating_table] .btn.orange{width:51.5%;float:right;}
+    .rating_table_wrap .rating_table .first_row .collapse_block{display:none!important;}
+    .rating_table_wrap .rating_table div[data-rating_table="5"] ul li.soft_license_menu ul{left:inherit;right:0;}
+
+    .best_mobile_casino .rating_table_wrap .rating_table .row.body_table div[data-rating_table="2"] div:before{content:url(../img/mobile_rating_mobile_casino_2.png);position:absolute;left:-30px;top:45px;}
+    .best_mobile_casino .rating_table_wrap .rating_table .row.body_table.first_row div[data-rating_table="2"] div:before{content:url(../img/mobile_rating_mobile_casino_1.png);position:absolute;left:-40px;top:45px;}
+
+    /*таблицы с рейтингами, внутренние страницы*/
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="1"]{width:16%;}
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="2"]{width:42%;}
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="3"]{width:100%!important;padding-right:5px;}
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="4"]{width:70%;padding-top:15px;display:none;}
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="5"]{width:28%;padding-top:15px;display:none;}
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="6"]{width:100%;padding:20px 5%;text-align:right;}
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="6"] div,
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="6"] a{vertical-align:middle;}
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table] .btn.white{margin-bottom:0;}
+    .rating_table_wrap.internal_ratings_table .rating_table  div[data-rating_table] .btn.white{width:32.6%;}
+    .rating_table_wrap.internal_ratings_table .rating_table  div[data-rating_table] .btn.orange{width:37.6%;}
+    .rating_table_wrap.internal_ratings_table .rating_table .first_row div[data-rating_table="4"]{display:inline-block;}
+    .rating_table_wrap.internal_ratings_table .rating_table .first_row div.show_mobile_cols[data-rating_table="5"]{display:inline-block;}
+    .rating_table_wrap.internal_ratings_table .rating_table div.hide_mobile_cols[data-rating_table="5"]{display:none!important;}
+    .rating_table_wrap.internal_ratings_table .rating_table .first_row div[data-rating_table="6"]{text-align:left;}
+    .rating_table_wrap.internal_ratings_table .rating_table .first_row div[data-rating_table] .btn.white{width:38%;}
+    .rating_table_wrap.internal_ratings_table .rating_table .first_row div[data-rating_table] .btn.orange{width:51.5%;float:right;}
+    .rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table="5"] ul li.soft_license_menu ul{left:inherit;right:0;}
+
+    .best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .first_mobile_casino,
+    .best_mobile_casino .rating_table_wrap .rating_table div[data-rating_table] .second_mobile_casino{display:none;}
+
+    /*таблица с рейтингами казино, по странам*/
+    /*.rating_table_wrap.country_table .rating_table .body_table div[data-rating_table="1"]:before{content:"";position:absolute;bottom:inherit;top:60px;left:28px;z-index: 10;display:inline-block;background:url(../img/mobile_rating_country.jpg) no-repeat center;width:46px;height:46px;border-radius:23px;border:1px solid #ebe189;}*/
+    .rating_table_wrap.country_table .rating_table .body_table div[data-rating_table="1"] .country_img{width:46px;height:46px;border-radius:23px;bottom:inherit;top:45px;left:2px;}
+
+    /*таблица с рейтингами казино, по софту*/
+    .rating_table_wrap.soft_table .rating_table .body_table[data-row_rating_table] div[data-rating_table="1"]:before{content:url(../img/mobile_rating_soft_2.png);position:absolute;bottom:inherit;left:30px;top:60px;z-index:10;}
+    .rating_table_wrap.soft_table .rating_table .body_table[data-row_rating_table="1"] div[data-rating_table="1"]:before{content:url(../img/mobile_rating_soft_1.png);position:absolute;bottom:inherit;left:28px;top:60px;z-index:10;}
+
+    /*таблица с рейтингами казино, по валютам*/
+    .rating_table_wrap.money_table .rating_table .body_table div[data-rating_table="2"] div:before{right:10%;}
+
+    /*таблица с рейтингами казино, по платформам*/
+    .rating_table_wrap.platform_table .rating_table .body_table[data-row_rating_table] div[data-rating_table="1"]:before{content:url(../img/mobile_rating_platform_2.png);position:absolute;bottom:inherit;left:34px;top:60px;z-index:10;}
+    .rating_table_wrap.platform_table .rating_table .body_table[data-row_rating_table="1"] div[data-rating_table="1"]:before{content:url(../img/mobile_rating_platform_1.png);position:absolute;bottom:inherit;left:28px;top:60px;z-index:10;}
+
+    .best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .first_bonus,
+    .best_bonuses .rating_table_wrap .rating_table div[data-rating_table] .second_bonus{top:65px;}
+
+    .collapse_block{display:inline-block;width:26%;height:auto;min-height:100%!important;text-align:center;cursor:pointer;}
+    .collapse_block div{display:inline-block;width:26px;height:26px;margin-bottom:5px;background-color:#ba440c;border-radius:18px;position:relative;}
+    .collapse_block div i{font-size:1.25em;color:#ffffff;transition-duration:.3s;position:absolute;top:4px;left:6px;}
+    .collapse_block.show_cols div i{transform:rotate(180deg);transition-duration:.3s;top:3px;left:7px;}
+    .collapse_block span{display:block;font-size:.75em;color:#ba440c;}
+    .collapse_block  + .btn.white{margin-right:5px;}
+
+    /*лидеры рейтингов*/
+    .leaders_top_five ul li p{margin-bottom:0;}
+    .leaders_top_five ul li p img{float:none;}
+    .leaders_top_five ul li p span{display:none;margin-top:40px;padding-bottom:20px;}
+    .leaders_top_five ul li .show_description{display:inline-block;}
+    .leaders_top_five ul li .show_description > span{display:inline-block;width:auto;font-size:.875em;color:#ba440c;vertical-align:middle;}
+    .leaders_top_five ul li .show_description div{display:inline-block;width:26px;height:26px;border:1px solid #ba440c;border-radius:18px;position:relative;vertical-align:middle;}
+    .leaders_top_five ul li .show_description div i{font-size:1.25em;color:#000000;transition-duration:.3s;position:absolute;top:2px;left:10px;}
+    .leaders_top_five ul li .show_description.active div i{transform:rotate(-90deg);transition-duration:.3s;top:1px;left:8px;}
+    .leaders_top_five ul li .position_ranking{right:inherit;bottom:inherit;top:1%;left:-3%;}
+    .leaders_top_five ul li .position_ranking > span{display:none;}
+    .leaders_top_five ul li .position_ranking span.position_ranking_img{display:inline-block;width:36px;height:36px;line-height:32px;}
+    .leaders_top_five ul li .position_ranking span.position_ranking_img span{font-size:1.125em;}
+    .leaders_top_five ul li .btn{width:37.3%!important;height:40px;border-radius:20px;line-height:36px;position:absolute;right:5%;}
+    .leaders_top_five ul li .btn.white{top:15px;margin-right:0;}
+    .leaders_top_five ul li .btn.orange{top:65px;}
+
+    .how_make_rating ul li{margin-bottom:10px;}
+    .how_make_rating ul li:last-child{margin-bottom:0;}
+
+    .helper_footer{display:none;}
+    footer{position:static;height:auto;}
+    .main_footer{height:auto;padding:0 0 25px;}
+    .main_footer div[data-footer_menu_item]{float:none;width:100%;border-bottom:1px solid #c5c5c5;padding:0 5%;}
+    .main_footer div[data-footer_menu_item] h4{height:75px;margin-bottom:0;line-height:75px;}
+    .main_footer div[data-footer_menu_item] h4 img,
+    .main_footer div[data-footer_menu_item] h4 a{vertical-align:middle;}
+    .main_footer div[data-footer_menu_item] h4 a{height:auto;padding-bottom:0;border:none;font-size:1.500em;}
+    .main_footer div[data-footer_menu_item] h4 i{position:absolute;right:0;top:20px;display:inline-block;font-size:2.5em;color:#000000;transition-duration:.3s;}
+    .main_footer div[data-footer_menu_item] h4.show_list i{transform:rotate(180deg);transition-duration:.3s;}
+    .main_footer div[data-footer_menu_item] ul{display:none;margin:20px 0 40px 60px;}
+    .main_footer div[data-footer_menu_item] ul li{margin-bottom:18px;}
+    .main_footer div[data-footer_menu_item] ul li a{font-size:1.125em;}
+    .main_footer .write_us,
+    .main_footer .social{position:static;padding:0 5%;margin-top:45px;}
+    .main_footer .write_us h4,
+    .main_footer .social h4{font-size:1.125em;vertical-align:middle;}
+    .main_footer .write_us h4{margin-bottom:5px;}
+    .main_footer .write_us a{font-size:1.5em;}
+    .copy_footer{padding:0 5%;}
+    .copy_footer .copy{display:inline-block;width:195px;vertical-align:middle;}
+    .copy_footer .site_map span{display:none;}
+    .copy_footer .site_map i{font-size:2em;}
+
+
+    /*страница рейтинги*/
+    .ratings_menu li{width:47%;margin-right:0;padding-bottom:25px;}
+    .ratings_menu li:nth-child(even){float:right;}
+    .ratings_menu li[data-ratings_menu] div{height:105px;background-position:center;}
+    .ratings_menu li[data-ratings_menu] a > span{top:17px;display:inline-block;width:72%;}
+
+
+    /*сокращеные тексты*/
+    .mobile_short_text .full_text .finish_text{display:none;}
+
+
+    /*-----рейтинги по странам, валюте и т.д.-----*/
+    /*.into_header_block.ratings img{display:none;}*/
+
+    /*фильтры на страницах рейтинга*/
+    .filters_wrap{display:none;}
+
+
+    /*-----обзоры игр-----*/
+    .reviews_list{margin-bottom:40px;}
+    .reviews_list li{display:block;width:100%;min-height:210px;height:auto;border:none;border-top:1px solid #d0d0d0;box-shadow:none;border-radius:0;padding:20px 0;margin:0;}
+    .reviews_list li.active,
+    .reviews_list li:hover{border:none;}
+    .reviews_list li:nth-child(even){float:none;}
+    .reviews_list li:first-child{border-top:none;}
+    .reviews_list li:last-child{border-bottom:1px solid #d0d0d0}
+    .reviews_list li .review_img_block{width:150px;height:110px;}
+    .reviews_list li a{padding:0;}
+    .reviews_games_wrap .btn{display:none;}
+    .reviews_games_wrap .btn.mobile{display:block;width:100%;margin-bottom:40px;}
+
+
+    /*-----обзор игры-----*/
+    .into_body_block.review_game_wrap{position:relative;}
+    .review_block li[data-review_block]{display:block;width:100%;}
+    .review_block li[data-review_block="1"]{margin-bottom:40px;}
+    .review_block li[data-review_block="1"] > div{height:180px;background-size:100%;}
+    .review_block li[data-review_block="2"]{display:none;}
+    .review_block li[data-review_block="3"]{margin-bottom:35px;}
+    .review_block li[data-review_block="3"] h4{position:relative;}
+    .review_block li[data-review_block="3"] h4 i{display:block;font-size:1.5em;color:#000000;position:absolute;right:0;top:-4px;transition-duration:.3s;}
+    .review_block li[data-review_block="3"] h4.show_tech_info i{transform:rotate(180deg);transition-duration:.3s;}
+    .review_block li[data-review_block="3"] ul{display:none;}
+    .into_body_block.review_game_wrap .btn{width:100%;position:static;}
+
+
+    /*-----бонусы-----*/
+    .rating_table_wrap.narrow_table.internal_ratings_table .rating_table .body_table div[data-rating_table="1"]{width:16%;}
+    .rating_table_wrap.narrow_table.internal_ratings_table .rating_table .body_table div[data-rating_table="2"]{width:42%;}
+    .rating_table_wrap.narrow_tablet.internal_ratings_table .rating_table .body_table div[data-rating_table="3"]{width:35%;padding-right:0;}
+    .rating_table_wrap.narrow_table.internal_ratings_table .rating_table .body_table div[data-rating_table="4"]{width:70%;padding-top:15px;display:none;}
+    .rating_table_wrap.narrow_table.internal_ratings_table .rating_table .body_table div[data-rating_table="5"]{width:28%;padding-top:15px;display:none;}
+    .rating_table_wrap.narrow_table.internal_ratings_table .rating_table .body_table div[data-rating_table="6"]{width:100%;padding:20px 5%;text-align:left;}
+
+
+    /*бонусы, внутрення страница*/
+    .into_header_block.bonus{width:100%;}
+
+    /*таблица с рейтингами на странице бонусы*/
+    .rating_table_wrap.internal_ratings_table.bonuses_table .rating_table div[data-rating_table] .first_bonus,
+    .rating_table_wrap.internal_ratings_table.bonuses_table .rating_table div[data-rating_table] .second_bonus{top:35px;left:-15px;}
+
+
+    /*-----NOVOLINE CASINOS-----*/
+    .novoline_casinos_list li div{display:inline-block;vertical-align:top;}
+    .novoline_casinos_list li div:first-child{float:left;}
+    .novoline_casinos_list li div:last-child{width:auto;display:inline}
+    .novoline_casinos_list li div span{width:125px;height:85px;}
+    .novoline_casinos_list li div p{clear:both;padding-top:10px;}
+    .novoline_casinos_list li div p.date{clear:none;padding-top:0;}
+    .novoline_casinos .btn{width:100%;}
+
+    /*NOVOLINE CASINOS внутренняя*/
+    .into_body_block.review_online_casino_wrap .welcome_bonus,
+    .into_body_block.review_online_casino_wrap .novoline_casino_play{display:none;}
+
+    .review_block.review_online_casino li[data-review_block="1"] .online_casino_slider_wrap{width:100%;height:180px;}
+    .online_casino_slider img{width:100%;height:100%;}
+
+    .review_block.review_novoline_casino li[data-review_block="2"]{display:block;width:100%;margin-bottom:20px;}
+    .review_block.review_novoline_casino li[data-review_block="2"] .welcome_bonus,
+    .review_block.review_novoline_casino li[data-review_block="2"] .novoline_casino_play{display:inline-block;vertical-align:top;}
+    .review_block.review_novoline_casino li[data-review_block="2"] .novoline_casino_play{width:45%;height:48px;margin-right:0;border-radius:24px;line-height:44px;float:right;position:relative;top:5px;}
+    .review_block.review_novoline_casino li[data-review_block="2"] .welcome_bonus{margin-bottom:20px;}
+    .review_block.review_novoline_casino li[data-review_block="3"],
+    .review_block.review_novoline_casino li[data-review_block="3"] ul{display:block;width:100%;}
+
+    .descriptiopn_online_casino{width:100%;}
+
+    .review_online_casino_wrap .pay_system_block{width:100%;padding:0;border:0;background-color:#ffffff;}
+    .review_online_casino_wrap .pay_system_block ul li:first-child{width:62%;}
+    .review_online_casino_wrap .pay_system_block .pay_systems_link{width:100%;}
+    .review_online_casino_wrap .pay_system_block ul li:last-child{width:35%;}
+    .review_online_casino_wrap .pay_system_block .platform_link i{font-size:1.5em;margin-right:20px;}
+    .review_online_casino_wrap .pay_system_block .platform_link img{height:20px;top:2px;}
+
+    .rating_table_wrap.rating_novoline_games .rating_table .body_table div[data-rating_table="2"]{width:44%;padding-left:10px;}
+    .rating_table_wrap.rating_novoline_games .rating_table .body_table div[data-rating_table="3"]{width:34%!important;}
+    .rating_table_wrap.rating_novoline_games .rating_table .body_table div[data-rating_table="3"] ul{display:block;}
+    .rating_table_wrap.rating_novoline_games .rating_table .body_table div[data-rating_table="4"]{width:100%;}
+    .rating_table_wrap.rating_novoline_games .rating_table .body_table div[data-rating_table="5"]{display:none!important;}
+
+    .btn.orange.play_game{width:100%;}
+
+    .review_form{width:100%;margin-bottom:80px;}
+    .review_form .input_block,
+    .review_form .input_block input{width:100%;}
+    .review_form textarea{width:100%;margin-bottom:30px;}
+    .review_form .user_rating_wrap span:first-child{display:block;margin-bottom:5px;}
+    .review_form .btn{width:100%;}
+
+        /*-----бесплатно-----*/
+    .ratings_menu.free_games li{padding-bottom:15px;}
+    .ratings_menu.free_games li[data-ratings_menu]:hover div:before{background-color:inherit;}
+    .ratings_menu.free_games li[data-ratings_menu]:hover div a{display:none;}
+    .ratings_menu.free_games li[data-ratings_menu] div a{display:none;}
+    .ratings_menu.free_games li[data-ratings_menu] a.btn.orange,
+    .ratings_menu.free_games li[data-ratings_menu] a.btn.white{display:block;width:100%;}
+    .ratings_menu.free_games li[data-ratings_menu] a.btn.orange{margin-bottom:15px;}
+    .ratings_menu.free_games li[data-ratings_menu] div + span{position:static;padding:10px 0 15px;}
+
+    /*бесплатно, внутренняя*/
+    .free_game_slider_wrap{width:100%;}
+    .free_game_slider a{display:none;}
+    .free_game_slider a.btn.white,
+    .free_game_slider a.btn.orange{display:block;width:200px;margin:0 auto;height:36px;border-radius:18px;line-height:32px;}
+    .free_game_slider a.btn.orange{margin:20px auto 15px;}
+    .free_game_slider_wrap .free_game_slider .slick-slide[data-free_game_slide]{height:260px;}
+    .free_game_slider_wrap .free_game_slider div[data-free_game_slide] .slide_img_block{height:150px;}
+    .free_game_slider_wrap .arrow_block .slick-arrow{top:30%;}
+    .review_block.free_game li[data-review_block="1"] div.free_game_img_block{float:left;width:100%;height:180px;}
+    .review_block.free_game li[data-review_block="1"] div.free_game_img_block span{display:block;height:100%;background:url(../img/free_game_img.jpg) no-repeat center;}
+    .review_block.free_game li[data-review_block="1"] div.free_game_desc{background:none;display:inline-block;width:100%;margin:10px 0 0;}
+    .review_block.free_game li[data-review_block="1"] div.read_all_text{height:auto;background:none;display:block;}
+
+
+    /*-----ошибка 404-----*/
+    .error_404 div{margin-bottom:40px;padding-top:20px;}
+    .error_404 div img{width:210px;height:195px;}
+    .error_404 p{margin-bottom:35px;}
+    .error_404 .btn{width:200px;margin-bottom:40px;font-family: PT_Sans;font-size:1.125em;}
+    .error_404 .btn{width:145px;height:46px;border-radius:23px;line-height:42px;}
+    .error_404 .btn.white{margin-right:10px;}
+    .error_404 .btn.orange{margin-left:10px;}
+}
+
+/*мобильная версия 320px*/
+@media only screen and (max-width: 320px){
+
+    h3{font-size:1.313em;}
+
+    .rating_table_wrap .rating_table .body_table div[data-rating_table="2"]{width:37%;}
+    /*.rating_table_wrap .rating_table .body_table div[data-rating_table="3"]{width:42%;}*/
+    .rating_table_wrap .rating_table div[data-rating_table] .casino_logo{width:100%;}
+
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="2"]{width:37%;}
+    .rating_table_wrap.internal_ratings_table .rating_table .body_table div[data-rating_table="3"]{width:42%;}
+    .rating_table_wrap.internal_ratings_table .rating_table div[data-rating_table] .casino_logo{width:100%;}
+
+    /*таблица с рейтингами казино, по странам*/
+    .rating_table_wrap.country_table .rating_table .body_table div[data-rating_table="1"]:before{left:15px;}
+
+    /*таблица с рейтингами казино, по софту*/
+    .rating_table_wrap.soft_table .rating_table .body_table[data-row_rating_table] div[data-rating_table="1"]:before{left:18px;}
+    .rating_table_wrap.soft_table .rating_table .body_table[data-row_rating_table="1"] div[data-rating_table="1"]:before{left:15px;}
+
+    /*таблица с рейтингами казино, по валютам*/
+    .rating_table_wrap.money_table .rating_table .body_table div[data-rating_table="2"] div:before{right:5%;}
+
+    /*таблица с рейтингами казино, по платформам*/
+    .rating_table_wrap.platform_table .rating_table .body_table[data-row_rating_table] div[data-rating_table="1"]:before{left:22px;}
+    .rating_table_wrap.platform_table .rating_table .body_table[data-row_rating_table="1"] div[data-rating_table="1"]:before{left:15px;}
+
+    /*таблица с рейтингами на странице бонусы*/
+    .rating_table_wrap.internal_ratings_table.bonuses_table .rating_table div[data-rating_table] .first_bonus,
+    .rating_table_wrap.internal_ratings_table.bonuses_table .rating_table div[data-rating_table] .second_bonus{top:30px;left:-25px;}
+
+    .main_footer .write_us a{font-size:1.375em;}
+    .main_footer .social h4{margin-right:5px;}
+
+    /*NOVOLINE CASINOS внутренняя*/
+    .review_online_casino_wrap .pay_system_block ul li:first-child{width:58%;}
+    .review_online_casino_wrap .pay_system_block ul li:last-child{width:40%;}
+
+    .rating_table_wrap.rating_novoline_games .rating_table .body_table div[data-rating_table="4"] ul li{width:23%;}
+    .rating_table_wrap.rating_novoline_games .rating_table .body_table div[data-rating_table="2"]{width:44%;padding-left:10px;}
+    .rating_table_wrap.rating_novoline_games .rating_table .body_table div[data-rating_table="3"]{width:34%;}
+
+    /*-----ошибка 404-----*/
+    .error_404 .btn{width:130px;}
+}
+
+.review_body {
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    box-shadow: 0 0 6px 2px rgba(0,0,0,.15);
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+.review_body p{
+    font-size: 1.125em;
+    margin-bottom: 10px;
+}
+
+.review_body p:first-child{
+    margin-bottom: 5px;
+}
+
+.review_body p.name{
+    color: #fe8300;
+}
+.review_body p.date{
+    font-size: .87em;
+}
+
+#review_sended{
+    display: none;
+    color: #638c30;
+}
+
+
+
+
+
+
+
+
+
+
