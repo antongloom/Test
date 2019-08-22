@@ -552,22 +552,72 @@
         <div class="onlineCasino__text">Чтобы определить, какие самые лучшие казино существуют в России, все игорные заведения были протестированы в режиме онлайн. После длительной проверки на практике каждому веб-ресурсу была поставлена объективная оценка. Это довольно трудоемкий процесс, который базировался на сравнении одного игрового сайта с другим по ряду критериев:</div>
         <div class="onlineCasino__info">
           <div class="info__block">
-            <div class="info__title"  @click="Show($event)">
+            <div class="info__title"  @click="Show1()">
               <div class="info__subtitle">Популярность ресурса</div>  
             </div> 
             <div class="info__content">
               <div class="info__description">
-                <div ref="header" class="info__text" :class="{activeText : showText}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
+                <div  class="info__text" :class="{activeText : showText1}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
               </div>
             </div> 
           </div>
           <div class="info__block">
-            <div class="info__title"  @click="Show($event)">
-              <div class="info__subtitle">Популярность ресурса</div>  
+            <div class="info__title"  @click="Show2()">
+              <div class="info__subtitle">Выплаты</div>  
             </div> 
             <div class="info__content">
               <div class="info__description">
-                <div ref="header" class="info__text" :class="{activeText : showText}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
+                <div  class="info__text" :class="{activeText : showText2}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
+              </div>
+            </div> 
+          </div>
+          <div class="info__block">
+            <div class="info__title"  @click="Show3()">
+              <div class="info__subtitle">Удобный интерфейс</div>  
+            </div> 
+            <div class="info__content">
+              <div class="info__description">
+                <div  class="info__text" :class="{activeText : showText3}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
+              </div>
+            </div> 
+          </div>
+          <div class="info__block">
+            <div class="info__title"  @click="Show4()">
+              <div class="info__subtitle">Честность</div>  
+            </div> 
+            <div class="info__content">
+              <div class="info__description">
+                <div  class="info__text" :class="{activeText : showText4}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
+              </div>
+            </div> 
+          </div>
+          <div class="info__block">
+            <div class="info__title"  @click="Show5()">
+              <div class="info__subtitle">Законность</div>  
+            </div> 
+            <div class="info__content">
+              <div class="info__description">
+                <div  class="info__text" :class="{activeText : showText5}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
+              </div>
+            </div> 
+          </div>
+          <div class="info__block">
+            <div class="info__title"  @click="Show6()">
+              <div class="info__subtitle">Техническая поддержка игроков</div>  
+            </div> 
+            <div class="info__content">
+              <div class="info__description">
+                <div  class="info__text" :class="{activeText : showText6}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
+              </div>
+            </div> 
+          </div>
+          <div class="info__block">
+            <div class="info__title"  @click="Show7()">
+              <div class="info__subtitle">Отзывы пользователей</div>  
+            </div> 
+            <div class="info__content">
+              <div class="info__description">
+                <div  class="info__text" :class="{activeText : showText7}">Данный критерий учитывает суточную посещаемость азартного клуба, которая затем суммируется за определенный временной период. Полученные данные сравниваются между собой, что позволяет определить десятку лидеров среди виртуальных игровых заведений по данному критерию.</div>
               </div>
             </div> 
           </div>
@@ -623,18 +673,152 @@
             </div>
           </div>
         </div>
-     </div> 
+        <div class="onlineCasino__title">НА ЧТО СЛЕДУЕТ ОБРАТИТЬ ВНИМАНИЕ</div>
+        <div class="onlineCasino__text onlineCasino__text--bottom">Перед тем, как составить рейтинг онлайн казино 2019, мы провели тщательную проверку, а также учитывали отзывы игроков. При этом следует понимать, что идеальных виртуальных азартных площадок не существует, хотя многие из них стремятся к совершенству. И чем большему числу вышеперечисленных критериев оно соответствует, тем лучше.</div>
+        <div class="onlineCasino__text">Наши специалисты провели сравнительный анализ виртуальных азартных заведений, в котором важное значение имело перекрытие всех минусов плюсами. То есть, например, если в заведении нет максимального лимита на вывод денег – это прекрасно. Но, если эти средства выводятся по 10 дней и более, то это, конечно, перечеркнет весь положительный эффект. Следовательно, мы сопоставили параметры, чтобы определить, какая интернет-площадка войдет в наш ТОП-10 онлайн казино.</div>
+        <div class="onlineCasino__country">
+          <div class="country__content">
+            <div class="country__text">
+              <div class="country__textblock">
+                <div class="country__title">Рейтинги по странам</div>
+                <div class="country__subtitle">Онлайн казино</div>
+              </div>
+            </div>
+            <ul class="country__list">
+              <li>Украина</li>
+              <li>Белоруссия</li>
+              <li>Германия</li>
+              <li>Англия</li>
+              <li>Казахстан</li>
+            </ul>
+            <div class="country__image">
+              <div class="country__bg">
+                <div class="country__block country__block--britain">
+                  <div class="block__img">
+                    <img class="block__border" src="img/maks/country1.png" alt="Icon">
+                  </div>
+                  <div class="block__name">Англия</div>
+                </div>
+                <div class="country__block country__block--german">
+                  <div class="block__img">
+                    <img class="block__border" src="img/maks/country2.png" alt="Icon">
+                  </div>
+                  <div class="block__name">Германия</div>
+                </div>
+                <div class="country__block country__block--belarus">
+                  <div class="block__img">
+                    <img class="block__border" src="img/maks/country3.png" alt="Icon">
+                  </div>
+                  <div class="block__name">Белоруссия</div>
+                </div>
+                <div class="country__block country__block--ukraine">
+                  <div class="block__img">
+                    <img class="block__border" src="img/maks/country4.png" alt="Icon">
+                  </div>
+                  <div class="block__name">Украина</div>
+                </div>
+                <div class="country__block country__block--kazakhstan">
+                  <div class="block__img">
+                    <img class="block__border" src="img/maks/country5.png" alt="Icon">
+                  </div>
+                  <div class="block__name">Казахстан</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="onlineCasino__text">Глобальный переход игровой индустрии от реальных заведений к интернет-пространство стал стимулом для открытия ряда онлайн-казино. Однако их большое многообразие привело к тому, что порой гэмблеру трудно выбрать наилучший для себя вариант. Понимая это, мы составили список рекомендаций, которые вам помогут не заблудиться в виртуальном азартном пространстве:</div>
+        <div class="onlineCasino_paragraphs">
+          <ul class="paragraphs__item">
+            <li><span>Большим плюсом игрового онлайн-ресурса является наличие демоверсий, которые дают возможность гэмблерам осваивать игровое виртуальное пространство абсолютно бесплатно. Сюда можно включить и текстовые описания игровых автоматов, которые будут несомненно полезны для новичков.</span></li>
+            <li><span>Все азартные заведения, которые вошли в наш ТОП лучших казино онлайн, представленный перед вами, имеют свою изюминку. Поэтому обращайте внимание на проводимые акции, интересные турниры, предоставление бонусов – вариантов может быть множество.</span></li>
+            <li><span>Выплаты игрокам должны производится мгновенно и строго контролируются специальным аудиторским органом.</span></li>
+            <li><span>Порядочный игровой клуб не станет держать в секрете пользовательское соглашение, некоторые аспекты которого могут создавать определенные сложности для пользователей. Он обязательно опубликует существующие ограничения на сайте, тем самым предоставив возможность ознакомиться с ними всем клиентам.</span></li>
+            <li><span>Онлайн-заведение должно заботится о своей репутации, прилагая все усилия, чтобы обеспечить безупречное качество услуг.</span></li>
+            <li><span>Надежные игровые заведения с хорошей отдачей всегда уделяют пристальное внимание слотам. Они должны быть интересны пользователям и разнообразны как по техпараметрам, так и тематике.</span></li>
+            <li><span>Солидная игровая интернет-площадка использует только проверенное ПО. Она уделяет пристальное внимание безопасности денежных средств и конфиденциальности предоставляемой пользователями информации.</span></li>
+            <li><span>Читайте отзывы, которые оставляют игроки на сторонних сайтах, поскольку данные на веб-ресурсе самого клуба могут быть недостоверными.</span></li>
+          </ul>
+        </div>
+        <div class="onlineCasino__text">Зачастую реклама любого азартного интернет-казино твердит, что все вышеописанное непременно у него имеется, но на деле все обстоит иначе. Большой выбор игр сводится к пару десяткам устаревших игровых аппаратов. Из-за строжайших условий по вейджеру столь впечатляющая бонусная программа может оказаться пустой. Высказывания о прозрачности работы азартного заведения и наличии лицензионного документа порой не подтверждаются реальными фактами. Поэтому будьте предельно осторожны и внимательно ознакомьтесь со всеми пунктами наших рекомендаций, что позволит вам сделать правильный выбор виртуального ресурса на сайте top-onlinecasinos.net.</div>
+     </div>
+     <div class="onlineCasino__ways">
+       <div class="ways__title">Способы оплаты в казино</div>
+       <div class="ways__block">
+         <div class="ways__item">
+           <div class="ways__icon">
+             <img src="img/maks/ways1.png" alt="Img">
+           </div>
+           <div class="ways__icon">
+             <img src="img/maks/ways2.png" alt="Img">
+           </div>
+           <div class="ways__icon">
+             <img src="img/maks/ways3.png" alt="Img">
+           </div>
+           <div class="ways__icon">
+             <img src="img/maks/ways4.png" alt="Img">
+           </div>
+           <div class="ways__icon">
+             <img src="img/maks/ways5.png" alt="Img">
+           </div>
+           <div class="ways__icon">
+             <img src="img/maks/ways6.png" alt="Img">
+           </div>
+           <div class="ways__icon">
+             <img src="img/maks/ways7.png" alt="Img">
+           </div>
+           <div class="ways__icon">
+             <img src="img/maks/ways8.png" alt="Img">
+           </div>
+           <div class="ways__icon">
+             <img src="img/maks/ways9.png" alt="Img">
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="onlineCasino__content">
+        <div class="onlineCasino__title">РЕЙТИНГ КАЗИНО ОНЛАЙН: АНАЛИЗ СПЕЦИАЛИСТОВ</div>
+        <div class="onlineCasino__text onlineCasino__text--footer">В составлении обзоров участвовали специалисты, основной задачей которых был тщательный анализ виртуальных игровых заведений с контролем честности. Мы затронули самые важные аспекты, следовательно, вы можете смело нам довериться и сделать свой осознанный выбор в отношении того или иного казино, которое наиболее соответствует вашим требованиям. Благодаря тщательному тестированию, каждое азартное заведение достойно быть признанным одним из самых лучших на просторах глобальной сети</div>
+     </div>
    </div>
 </div>
+<footer>
+  <div class="footer__content">
+    <div class="footer__block">
+      <a href="#" class="footer__logo">
+        <img src="img/maks/logo.png" alt="Img">
+      </a>
+      <div class="footer__serch">
+        <input type="text">
+        <img src="img/maks/search.png" alt="Img">
+      </div>
+    </div>
+    <div class="footer__text">
+      <ul class="footer__link">
+        <li><a href="#">Обзоры казино</a></li>
+        <li><a href="#">Каталог казино</a></li>
+        <li><a href="#">Онлайн игры</a></li>
+        <li><a href="#">Акции казино</a></li>
+      </ul>
+      <ul class="footer__link">
+        <li><a href="#">Лучшие бонусы</a></li>
+        <li><a href="#">Лучшие Live-казино</a></li>
+        <li><a href="#">Лучшие мобильные казино</a></li>
+        <li><a href="#">Лучшие версии для ПК</a></li>
+      </ul>
+      <ul class="footer__link">
+        <li><a href="#">О портале</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
 
 
-<div class="onlineCasino">
-    
-  </div> 
 
 
 
@@ -663,11 +847,35 @@
 var onlineCasino = new Vue({
   el: '#onlineCasino',
   data: {
-    showText: false
+    showText1: false,
+    showText2: true,
+    showText3: true,
+    showText4: true,
+    showText5: true,
+    showText6: true,
+    showText7: true
   },
   methods: {
-   Show(e) {
-    this.$refs.header.classList.add('activeText')
+   Show1() {
+    this.showText1 = !this.showText1
+   },
+   Show2() {
+    this.showText2 = !this.showText2
+   },
+   Show3() {
+    this.showText3 = !this.showText3
+   },
+   Show4() {
+    this.showText4 = !this.showText4
+   },
+   Show5() {
+    this.showText5 = !this.showText5
+   },
+   Show6() {
+    this.showText6 = !this.showText6
+   },
+   Show7() {
+    this.showText7 = !this.showText7
    }
   }
 })  
